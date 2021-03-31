@@ -2,11 +2,13 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Studio</title>
+    <title>Atelier</title>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=PT+Serif&family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="css/slick.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -16,7 +18,8 @@
             <div class="header_contacts">
                 <a class="header_phone" href="tel:380660239336">+38 (066) 023 93 36</a>
                 <a class="header_email" href="#">example@gmail.com</a>
-                <a class="header_btn" href="#">Бесплатная консультация</a>
+                <a data-fancybox data-src="#modal" href="javascript:;" class="header_btn"
+                   href="#">Бесплатная консультация</a>
             </div>
         </div>
     </div>
@@ -40,5 +43,62 @@
         </div>
     </div>
 </header>
+
+<section class="slider">
+    <div class="container">
+        <div class="slider_inner">
+            <div class="slider_item">
+                <div class="slider_item-content">
+                    <div class="slider_title">
+                        НУ ТИПА ТАЙТЛ, ИЛИ НА РУССКОМ - ЗАГОЛОВОК
+                    </div>
+                    <div class="slider_text">
+                        Здесь могла быть ваша реклама, но будет наша реклама =)
+                    </div>
+                    <a data-fancybox data-src="#modal" href="javascript:;" class="slider_btn default-btn">
+                        Нажал - заплатил
+                    </a>
+                </div>
+            </div>
+            <div class="slider_item">
+                <div class="slider_item-content">
+                    <div class="slider_title">
+                        НУ ТИПА ТАЙТЛ, ИЛИ НА РУССКОМ - ЗАГОЛОВОК
+                    </div>
+                    <div class="slider_text">
+                        Здесь могла быть ваша реклама, но будет наша реклама =)
+                    </div>
+                    <a data-fancybox data-src="#modal" href="javascript:;" class="slider_btn default-btn">
+                        Нажал - заплатил
+                    </a>
+                </div>
+            </div>
+            <div class="slider_item">
+                <div class="slider_item-content">
+                    <div class="slider_title">
+                        НУ ТИПА ТАЙТЛ, ИЛИ НА РУССКОМ - ЗАГОЛОВОК
+                    </div>
+                    <div class="slider_text">
+                        Здесь могла быть ваша реклама, но будет наша реклама =)
+                    </div>
+                    <a data-fancybox data-src="#modal" href="javascript:;" class="slider_btn default-btn">
+                        Нажал - заплатил
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<div id="modal">
+    <h2>Обманул!</h2>
+    <p>Плати деньги!</p>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="js/jquery.fancybox.min.js"></script>
+<script src="js/slick.min.js"></script>
+<script src="js/main.js"></script>
 </body>
 </html>
