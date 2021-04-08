@@ -1,176 +1,415 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <title>Atelier</title>
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=PT+Serif&family=Roboto&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/fonts.css">
-    <link rel="stylesheet" href="css/jquery.fancybox.min.css">
-    <link rel="stylesheet" href="css/slick.css">
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,700|Roboto:400,500&amp;subset=cyrillic"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/fonts.css">
+  <link rel="stylesheet" href="css/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="css/slick.css">
+  <link rel="stylesheet" href="css/jquery.formstyler.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/media.css">
 </head>
+
 <body>
-<header class="header">
-    <div class="header_top">
-        <div class="container">
-            <div class="header_contacts">
-                <a class="header_phone" href="tel:380660239336">+38 (066) 023 93 36</a>
-                <a class="header_email" href="#">example@gmail.com</a>
-                <a data-fancybox data-src="#modal" href="javascript:;" class="header_btn"
-                   href="#">Бесплатная консультация</a>
+  <header class="header">
+    <div class="header__content">
+      <div class="container">
+        <div class="header__content-inner">
+          <div class="header__logo">
+            <a href="#">
+              <img height="30" src="img/logo.png" alt="">
+            </a>
+          </div>
+          <nav class="menu">
+            <div class="header__btn-menu">
+              <span class="icon-bars"></span>
             </div>
+            <ul>
+              <li><a href="#">Главная</a></li>
+              <li><a href="#">О нас</a></li>
+              <li><a href="#">Услуги</a></li>
+              <li><a href="#">Контакты</a></li>
+            </ul>
+          </nav>
         </div>
+      </div>
     </div>
-    <div class="header_content">
-        <div class="container">
-            <div class="header_content-inner">
-                <div class="header_logo">
-                    <a href="#">
-                        <img src="images/logo.png">
-                    </a>
-                </div>
-                <nav class="menu">
-                    <ul>
-                        <li><a href="#">Главная</a></li>
-                        <li><a href="#">О компании</a></li>
-                        <li><a href="#">Услуги</a></li>
-                        <li><a href="#">Контакты</a></li>
-                    </ul>
-                </nav>
-            </div>
-        </div>
-    </div>
-</header>
-
-<section class="slider">
+  </header>
+  <section class="slider">
     <div class="container">
-        <div class="slider_inner">
-            <div class="slider_item">
-                <div class="slider_item-content">
-                    <div class="slider_title">
-                        НУ ТИПА ТАЙТЛ, ИЛИ НА РУССКОМ - ЗАГОЛОВОК
-                    </div>
-                    <div class="slider_text">
-                        Здесь могла быть ваша реклама, но будет наша реклама =)
-                    </div>
-                    <a data-fancybox data-src="#modal" href="javascript:;" class="slider_btn default-btn">
-                        Нажал - заплатил
-                    </a>
-                </div>
+      <div class="slider__inner">
+        <div class="slider__item">
+          <div class="slider__item-content">
+            <div class="slider__title">
+              ПОШИВ И РЕМОНТ ЛЮБОЙ СЛОЖНОСТИ
             </div>
-            <div class="slider_item">
-                <div class="slider_item-content">
-                    <div class="slider_title">
-                        НУ ТИПА ТАЙТЛ, ИЛИ НА РУССКОМ - ЗАГОЛОВОК
-                    </div>
-                    <div class="slider_text">
-                        Здесь могла быть ваша реклама, но будет наша реклама =)
-                    </div>
-                    <a data-fancybox data-src="#modal" href="javascript:;" class="slider_btn default-btn">
-                        Нажал - заплатил
-                    </a>
-                </div>
+            <div class="slider__text">
+              Можем пошить вам штаны за "40 гривень", а если, вдруг, вы их порвали, не дай Бог - на жопе, то можем и зашить.
             </div>
-            <div class="slider_item">
-                <div class="slider_item-content">
-                    <div class="slider_title">
-                        НУ ТИПА ТАЙТЛ, ИЛИ НА РУССКОМ - ЗАГОЛОВОК
-                    </div>
-                    <div class="slider_text">
-                        Здесь могла быть ваша реклама, но будет наша реклама =)
-                    </div>
-                    <a data-fancybox data-src="#modal" href="javascript:;" class="slider_btn default-btn">
-                        Нажал - заплатил
-                    </a>
-                </div>
-            </div>
-
+            <a data-fancybox data-src="#modal" href="javascript:;" class="slider__btn default-btn">
+              Оставить заявку
+            </a>
+          </div>
         </div>
+        <div class="slider__item">
+          <div class="slider__item-content">
+            <div class="slider__title">
+              РЕСТАВРАЦИЯ ПОДУШЕК
+            </div>
+            <div class="slider__text">
+              Хватит спать на грязных подушка. Ты грязный, не моешься, представь какой там ужас... Вот одежду ты почему-то часто стираешь, а чем подушка хуже?
+            </div>
+            <a data-fancybox data-src="#modal" href="javascript:;" class="slider__btn default-btn">
+              Оставить заявку
+            </a>
+          </div>
+        </div>
+        <div class="slider__item">
+          <div class="slider__item-content">
+            <div class="slider__title">
+              ВСЁ ДЛЯ РУКОДЕЛИЯ
+            </div>
+            <div class="slider__text">
+              А чё, норм хобби. Интересно? У нас есть всё что тебе нужно: от наборов для вышивки до наборов для вышивки.
+            </div>
+            <a data-fancybox data-src="#modal" href="javascript:;" class="slider__btn default-btn">
+              Оставить заявку
+            </a>
+          </div>
+        </div>
+
+      </div>
     </div>
-</section>
-<section class="about">
+  </section>
+
+  
+  <section class="services">
     <div class="container">
-        <div class="about_top">
-            <div class="about_title-box">
-                <div class="about-title">
-                    Наши услуги
-                </div>
-                <div class="about_text">
-                    Ну тип, мы можем списать деньги с вашей карты. Много денег. Очень много денег.
-                </div>
-            </div>
-            <div class="about_btn">
-                <a href="#">
-                    Показать все услуги
-                </a>
-            </div>
+      <div class="services__top">
+        <div class="services__title-box">
+          <div class="services__title">
+            Наши услуги
+          </div>
+          <div class="services__text">
+            Решим любые ваши проблемы. Спешишь на свидание, а брюки длинные? 5 минут и ты красавчик)
+          </div>
         </div>
-        <div class="about_items">
-            <div class="about_item">
-                <img src="images/about-1.png">
-                <div class="about_item-title">
-                    Мы богаты
-                </div>
-                <div class="about_item-text">
-                    Мы богаты, а вы нет. Прекрасно, не так ли?
-                </div>
-                <div class="about_item-btn">
-                    <a class="about_item-link" href="#">
-                        Подробнее
-                    </a>
-                    <a data-fancybox data-src="#modal" href="javascript:;" class="default-btn">
-                        Заказать
-                    </a>
-                </div>
-            </div>
-            <div class="about_item">
-                <img src="images/about-2.png">
-                <div class="about_item-title">
-                    Мы богаты
-                </div>
-                <div class="about_item-text">
-                    Мы богаты, а вы нет. Прекрасно, не так ли?
-                </div>
-                <div class="about_item-btn">
-                    <a class="about_item-link" href="#">
-                        Подробнее
-                    </a>
-                    <a data-fancybox data-src="#modal" href="javascript:;" class="default-btn">
-                        Заказать
-                    </a>
-                </div>
-            </div>
-            <div class="about_item">
-                <img src="images/about-3.png">
-                <div class="about_item-title">
-                    Мы богаты
-                </div>
-                <div class="about_item-text">
-                    Мы богаты, а вы нет. Прекрасно, не так ли?
-                </div>
-                <div class="about_item-btn">
-                    <a class="about_item-link" href="#">
-                        Подробнее
-                    </a>
-                    <a data-fancybox data-src="#modal" href="javascript:;" class="default-btn">
-                        Заказать
-                    </a>
-                </div>
-            </div>
+        <div class="services__btn">
+          <a href="#">
+            Показать все услуги
+          </a>
         </div>
+      </div>
+      <div class="services__items">
+        <div class="services__item">
+          <img src="img/about-1.png" alt="">
+          <div class="services__item-title">
+            Пошив и ремонт
+          </div>
+          <div class="services__item-text">
+            Можем пошить вам штаны за "40 гривень", а если, вдруг, вы их порвали, не дай Бог - на жопе, то можем и зашить.
+          </div>
+          <div class="services__item-btn">
+            <a class="services__item-link" href="#">Подробнее</a>
+            <a data-fancybox data-src="#modal" href="javascript:;" class="default-btn">
+              Заказать
+            </a>
+          </div>
+        </div>
+        <div class="services__item">
+          <img src="img/about-2.png" alt="">
+          <div class="services__item-title">
+            Реставрация подушек
+          </div>
+          <div class="services__item-text">
+            Хватит спать на грязных подушка. Ты грязный, не моешься, представь какой там ужас... Вот одежду ты почему-то часто стираешь, а чем подушка хуже?
+          </div>
+          <div class="services__item-btn">
+            <a class="services__item-link" href="#">Подробнее</a>
+            <a data-fancybox data-src="#modal" href="javascript:;" class="default-btn">
+              Заказать
+            </a>
+          </div>
+        </div>
+        <div class="services__item">
+          <img src="img/about-3.png" alt="">
+          <div class="services__item-title">
+            Всё для рукоделия
+          </div>
+          <div class="services__item-text">
+            А чё, норм хобби. Интересно? У нас есть всё что тебе нужно: от наборов для вышивки до наборов для вышивки.
+          </div>
+          <div class="services__item-btn">
+            <a class="services__item-link" href="#">Подробнее</a>
+            <a data-fancybox data-src="#modal" href="javascript:;" class="default-btn">
+              Заказать
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
-</section>
+  </section>
+  
+  <section class="about">
+    <div class="container">
+      <div class="about__inner">
+        <div class="about__title">
+          О компании
+        </div>
+        <div class="about__text">
+          Компания специализируется на оказании услуг в сфере корпоративного права, налогового консалтинга,
+          представительства в судах, ликвидации и банкротства предприятий. На сегодняшний день, коллектив компании
+          объединяет
+          высокопрофессиональных экспертов имеющих
+          специализации в отдельных областях права.
+        </div>
+        <a href="#" class="about__btn default-btn">
+          Узнать больше
+        </a>
+      </div>
+    </div>
+  </section>
+  
+  <section class="form">
+    <div class="container">
+      <div class="form__inner">
+        <div class="form__content">
+          <div class="form__title-box">
+            <div class="form__title">
+              Получить Консультацию
+            </div>
+            <div class="form__text">
+              Комплексный подход к вашему вопросу, своевременная правовую помощь, представление интересов во всех
+              судебных инстанциях.
+            </div>
+          </div>
+          <div class="form__box">
+            <form>
+              <div class="form__box-inner">
+                <div class="form__box-left">
+                  <label>
+                    E-mail
+                    <input type="text">
+                  </label>
+                  <label>
+                    Контактный телефон
+                    <input type="text">
+                  </label>
+                  <label>
+                    ФИО
+                    <input type="text">
+                  </label>
+                  <label>
+                    Тема вопроса
+                    <select>
+                      <option>-------------</option>
+                      <option>-------------</option>
+                      <option>-------------</option>
+                      <option>-------------</option>
+                    </select>
+                  </label>
+                </div>
+                <div class="form__box-right">
+                  <label>
+                    Сообщение
+                    <textarea></textarea>
+                  </label>
+                  <button class="default-btn" type="submit">Получить консультацию</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="advantages">
+    <div class="container">
+      <div class="advantages__inner">
+        <div class="advantages-item">
+          <div class="advantages__title">
+            Десятки добровольных ликвидаций ежемесячно
+          </div>
+          <div class="advantages__text">
+            Мы умеем минимизировать все риски в процессе добровольной ликвидации юридических лиц.
+          </div>
+        </div>
+        <div class="advantages-item">
+          <div class="advantages__title">
+            Отличное знание законов в сфере банкротства
+          </div>
+          <div class="advantages__text">
+            Позволяют нам эффективно отстаивать как интересы кредиторов, так и интересы собственников проблемной
+            организации.
+          </div>
+        </div>
+        <div class="advantages-item">
+          <div class="advantages__title">
+            Большой опыт сопровождения банкротства
+          </div>
+          <div class="advantages__text">
+            Мы обладаем большим опытом сопровождения процедур банкротства предприятий.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<div id="modal">
-    <h2>Обманул!</h2>
-    <p>Плати деньги!</p>
-</div>
+  <section class="news">
+    <div class="container">
+      <div class="news__top">
+        <div class="news__title-box">
+          <div class="news__title">
+            Новости Компании
+          </div>
+          <div class="news__text">
+            Комплексный подход к вашему вопросу, своевременная правовую помощь, представление интересов во всех судебных
+            инстанциях.
+          </div>
+        </div>
+        <div class="news__btn">
+          <a href="#">
+            Открыть все новости
+          </a>
+        </div>
+      </div>
+      <div class="news__inner">
+        <div class="news__slider">
+          <div class="news__slider-inner">
+            <div class="news__slider-item">
+              <div class="news__slider-title">
+                Банкротство и ликвидация предприятия в Украине
+              </div>
+              <div class="news__slider-text">
+                «На сегодняшний день, коллектив компании объединяет высокопрофессиональных экспертов имеющих
+                специализации в отдельных областях права. На сегодняшний день, коллектив компании объединяет
+                высокопрофессиональных экспертов имеющих специализации в отдельных областях права. На сегодняшний день,
+                коллектив компании объединяет высокопрофессиональных экспертов имеющих специализации в отдельных
+                областях права...»
+              </div>
+              <div class="news__slider-author">
+                Андрей Ворошилов, генеральный д иректор компании Bankom
+              </div>
+            </div>
+            <div class="news__slider-item">
+              <div class="news__slider-title">
+                Банкротство и ликвидация предприятия в Украине
+              </div>
+              <div class="news__slider-text">
+                «На сегодняшний день, коллектив компании объединяет высокопрофессиональных экспертов имеющих
+                специализации в отдельных областях права. На сегодняшний день, коллектив компании объединяет
+                высокопрофессиональных экспертов имеющих специализации в отдельных областях права. На сегодняшний день,
+                коллектив компании объединяет высокопрофессиональных экспертов имеющих специализации в отдельных
+                областях права...»
+              </div>
+              <div class="news__slider-author">
+                Андрей Ворошилов, генеральный д иректор компании Bankom
+              </div>
+            </div>
+            <div class="news__slider-item">
+              <div class="news__slider-title">
+                Банкротство и ликвидация предприятия в Украине
+              </div>
+              <div class="news__slider-text">
+                «На сегодняшний день, коллектив компании объединяет высокопрофессиональных экспертов имеющих
+                специализации в отдельных областях права. На сегодняшний день, коллектив компании объединяет
+                высокопрофессиональных экспертов имеющих специализации в отдельных областях права. На сегодняшний день,
+                коллектив компании объединяет высокопрофессиональных экспертов имеющих специализации в отдельных
+                областях права...»
+              </div>
+              <div class="news__slider-author">
+                Андрей Ворошилов, генеральный д иректор компании Bankom
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="#" class="news__blog">
+          <div class="news__images">
+            <img src="img/news-1.jpg" alt="">
+            <div class="news__date">03.04</div>
+          </div>
+          <div class="news__blog-title">
+            Новость компании
+          </div>
+          <div class="news__blog-text">
+            На сегодняшний день, коллектив компании объединяет высокопрофессиональных экспертов имеющих специализации в
+            отдельных областях права...»
+          </div>
+        </a>
+        <a href="#" class="news__blog">
+          <div class="news__images">
+            <img src="img/news-2.jpg" alt="">
+            <div class="news__date">03.04</div>
+          </div>
+          <div class="news__blog-title">
+            Новость компании
+          </div>
+          <div class="news__blog-text">
+            На сегодняшний день, коллектив компании объединяет высокопрофессиональных экспертов имеющих специализации в
+            отдельных областях права...»
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script src="js/jquery.fancybox.min.js"></script>
-<script src="js/slick.min.js"></script>
-<script src="js/main.js"></script>
+  <footer class="footer">
+    <div class="footer__content">
+      <div class="container">
+        <div class="footer__inner">
+          <div class="footer__info">
+            <div class="footer__title">
+              Приходи! Мы ждём тебя, друк =)
+            </div>
+            <div class="footer__text">
+              Если ты так и не понял, то мы можем: зашить тебе штаны, почистить тебе подушку и продать набор для вышивки.
+            </div>
+            <a data-fancybox data-src="#modal" href="javascript:;" class="header__btn" href="#">
+              Бесплатная консультация
+            </a>
+            <ul class="footer__list">
+              <li><a class="footer__phone" href="tel:380660239336">+38 (066) 023 93 36</a></li>
+              <li><a href="#">example.email@gmail.com</a></li>
+              <li><a class="footer__adress" href="#">Лозовая, м-н 1, 21</a></li>
+            </ul>
+          </div>
+          <div class="footer__map">
+            <iframe height="250px" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d655.9642979163693!2d36.289527!3d48.8799989!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xccd2ef3688aba3de!2z0JDRgtC10LvRjNC1INCc0L7QtCDQuCDQoNC10YHRgtCw0LLRgNCw0YbQuNGPINCf0L7QtNGD0YjQtdC6!5e0!3m2!1sru!2sua!4v1617912458313!5m2!1sru!2sua" frameborder="0" style="border:0" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer__copy">
+      <div class="container">
+        <div class="copy__text">
+          © 2021 Designed by Nelson. Все права защищены.
+        </div>
+      </div>
+    </div>
+  </footer> 
+
+  <div id="modal">
+    <form>
+      <input type="text" placeholder="Ваше имя">
+      <input type="text" placeholder="Ваш телефон">
+      <input type="submit" value="Отправить">
+    </form>
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="js/jquery.fancybox.min.js"></script>
+  <script src="js/slick.min.js"></script>
+  <script src="js/jquery.formstyler.min.js"></script>
+  <script src="js/main.js"></script>
+
 </body>
+
 </html>
