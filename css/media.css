@@ -95,18 +95,6 @@
   }
 }
 @media (max-width: 700px){
-  .header__btn{
-    float: none;
-  }
-  .header__contacts{
-    text-align: center;
-  }
-  .header__btn:before{
-    display: none;
-  }
-  .footer__info .header__btn:before{
-    display: block;
-  }
   .header__btn-menu{
     display: block;
   }
@@ -124,7 +112,7 @@
   }
   .menu a{
     display: block;
-    background-color: #ffc222;
+    background-color: #1fa0b5;
     border-top: 1px solid #fff;
     border-bottom: 1px solid #fff;
   }
@@ -180,9 +168,6 @@
     padding-right: 30px;
   }
 }
-
-
-
 @media (min-width: 700px){
   .menu ul{
     display: block !important;

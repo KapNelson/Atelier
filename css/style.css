@@ -26,23 +26,6 @@ body{
 header{
   font-family: 'Roboto', sans-serif;
 }
-.header__btn{
-  float: right;
-  line-height: 36px;
-  color: #1b1b1b;
-  background-color: #00bfff;
-  padding: 5px 20px 4px 50px;
-  font-size: 16px;
-  display: block;
-  position: relative;
-}
-.header__btn:before{
-  content: "\f0b1";
-  font-family: 'icomoon';
-  position: absolute;
-  left: 22px;
-  color: #1b1b1b;
-}
 .header__content{
   padding: 20px 0px 20px;
 }
@@ -62,7 +45,7 @@ header{
   transition: all .3s;
 }
 .menu a:hover{
-  border-color: #00bfff;
+  border-color: #1fa0b5;
 }
 .menu li + li{
   padding-left: 10px;
@@ -85,29 +68,30 @@ header{
 }
 .slider__title{
   text-transform: uppercase;
-  font-size: 30px;
+  font-size: 45px;
+  font-weight: bold;
   line-height: 36px;
-  color: #fff;
-  font-weight: 500;
+  color: #242765;
   letter-spacing: 1.5px;
   margin-bottom: 22px;
   font-family: 'Roboto', sans-serif;
 }
 .slider__text{
-  line-height: 24px;
+  line-height: 30px;
+  font-style: italic;
   font-size: 18px;
-  color: #d3d2d2;
+  color: #000;
   margin-bottom: 50px;  
 }
 .default-btn{
   display: inline-block;
   font-size: 14px;
   line-height: 24px;
-  color: #fff;
+  color: #000;
   font-weight: 500;
   font-family: 'Roboto', sans-serif;
   padding: 8px 30px 8px 24px;
-  border: 1px solid #00bfff;
+  border: 1px solid #242765;
   border-right-width: 20px;
   position: relative;
   z-index: 2;
@@ -116,6 +100,7 @@ header{
 .default-btn:after{
   content: "\f105";
   font-family: 'icomoon';
+  color: #fff;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -126,15 +111,14 @@ header{
 }
 .slick-btn{
   position: absolute;
-  top: 70%;
+  top: 50%;
   z-index: 3;
   width: 40px;
   height: 40px;
-  border: 1px solid #fff;
-
+  border: 1px solid #242765;
   cursor: pointer;
   outline: none;
-  background-color: #00bfff;
+  background-color: #242765;
 }
 .slick-btn.slick-disabled{
   cursor: default;
@@ -183,7 +167,7 @@ header{
   position: absolute;
   width: 100px;
   height: 2px;
-  background-color: #00bfff;
+  background-color: #1fa0b5;
   left: 0;
   top: 11px;
 }
@@ -208,7 +192,7 @@ header{
   line-height: 24px;
   letter-spacing: 0.25px;
   padding: 5px 38px;
-  border: 3px solid #e6e6e6;
+  border: 3px solid #1fa0b5;
 }
 .services__items{
   display: flex;
@@ -275,9 +259,13 @@ header{
 }
 .about__text{
   margin-bottom: 30px;
+  font-size: 18px;
   letter-spacing: 0.1px;
   line-height: 24px;
-  color: #d3d2d2;
+  color: #fff;
+}
+.about__btn.default-btn{
+  color: #000;
 }
 .about__btn.default-btn:after{
   color: #000;
@@ -365,7 +353,7 @@ header{
 	color: #FFF;
 }
 .form__box-inner  .jq-selectbox li:hover {
-	background-color: #08C;
+	background-color: #1fa0b5;
 	color: #FFF;
 }
 .form__box-inner  .jq-selectbox li.disabled {
@@ -430,7 +418,7 @@ header{
   position: absolute;
   width: 40px;
   height: 40px;
-  border: 2px solid #00bfff;
+  border: 2px solid #1fa0b5;
   top: 0;
   left: 50%;
   transform: translateX(-50%);
@@ -477,7 +465,7 @@ header{
   height: 30px;
   text-align: center;
   line-height: 30px;
-  background-color: #00bfff;
+  background-color: #1fa0b5;
 }
 .news__blog{
   max-width: 260px;
@@ -488,7 +476,7 @@ header{
 }
 .news__date{
   position: absolute;
-  background-color: #00bfff;
+  background-color: #1fa0b5;
   height: 55px;
   width: 50px;
   color: #fff;
@@ -546,14 +534,31 @@ header{
    color: #dadada;
 }
 .footer__content{
-  background-color: #595959;
+  background-color: #1fa0b5;
   padding: 20px 0px 30px;
 }
 .footer__inner{
   display: flex;
   justify-content: space-between;
 }
-.footer__inner .header__btn{
+.footer__btn{
+  float: right;
+  line-height: 36px;
+  color: #fff;
+  background-color: #242765;
+  padding: 5px 20px 4px 50px;
+  font-size: 16px;
+  display: block;
+  position: relative;
+}
+.footer__btn:before{
+  content: "\f0b1";
+  font-family: 'icomoon';
+  position: absolute;
+  left: 22px;
+  color: #fff;
+}
+.footer__inner .footer__btn{
   float: none;
   display: inline-block;
 }
@@ -600,7 +605,7 @@ header{
   content: '\f003';
   position: absolute;
   left: 0;
-  color: #00bfff;
+  color: #242765;
   font-family: 'icomoon';
 }
 .footer__list .footer__phone:before{
@@ -635,7 +640,7 @@ header{
   font-weight: 400;
 }
 #modal input[type="submit"]{
-  background-color: #00bfff;
+  background-color: #1fa0b5;
   border: none;
 }
 .header__btn-menu{
