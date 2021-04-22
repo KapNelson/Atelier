@@ -78,8 +78,8 @@ header{
 }
 .slider__text{
   line-height: 30px;
-  font-style: italic;
   font-size: 18px;
+  font-weight: bolder;
   color: #000;
   margin-bottom: 50px;  
 }
@@ -265,10 +265,10 @@ header{
   color: #fff;
 }
 .about__btn.default-btn{
-  color: #000;
+  color: #fff;
 }
 .about__btn.default-btn:after{
-  color: #000;
+  color: #fff;
 }
 .form{
   padding-top: 30px;
@@ -434,7 +434,7 @@ header{
 }
 .advantages__text{
   line-height: 24px;
-  color: #d3d2d2;
+  color: #fff;
   letter-spacing: 0.1px;
 }
 .news{
@@ -574,12 +574,12 @@ header{
   font-family: 'Roboto', sans-serif;
   font-weight: 500;
   font-size: 16px;
-  color: #fff;
+  color: #242765;
   line-height: 36px;
   letter-spacing: 0.5px;
 }
 .footer__text{
-  color: #d3d2d2;
+  color: #000;
   margin-bottom: 20px;
 }
 .footer__info{
@@ -595,7 +595,7 @@ header{
   font-size: 16px;
   line-height: 24px;
   letter-spacing: 0.25px;
-  color: #fff;
+  color: #000;
   font-weight: 400;
   font-family: 'Roboto', sans-serif;
   padding-left: 33px;
