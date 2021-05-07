@@ -32,7 +32,7 @@ header{
 .header__btn{
   float: right;
   line-height: 36px;
-  color: #1b1b1b;
+  color: #fff;
   background-color: #242765;
   padding: 5px 20px 4px 50px;
   font-size: 16px;
@@ -43,7 +43,8 @@ header{
   content: "\f0b1";
   position: absolute;
   left: 22px;
-  color: #1b1b1b;
+  color: #fff;
+  font-family: "icomoon";
 }
 .header__contacts:after{
   content: "";
@@ -52,7 +53,7 @@ header{
 }
 .header__phone,
 .header__email{
-  color: #cbcacb;
+  color: #000;
   letter-spacing: 0.25px;
   line-height: 45px;
   position: relative;
@@ -65,7 +66,8 @@ header{
   content: "\f095";
   position: absolute;
   left: 0;
-  color: #ffc222;
+  color: #000;
+  font-family: "icomoon";
 }
 .header__email{
   padding-left: 24px;
@@ -74,7 +76,8 @@ header{
   content: "\f003";
   position: absolute;
   left: 0;
-  color: #ffc222;
+  color: #000;
+  font-family: "icomoon";
 }
 .header__content{
   padding: 20px 0px 20px;
@@ -606,6 +609,7 @@ header{
   position: absolute;
   left: 22px;
   color: #fff;
+  font-family: "icomoon";
 }
 .footer__inner .footer__btn{
   float: none;
