@@ -2,9 +2,9 @@
   font-family: 'icomoon';
   src:  url('../fonts/icomoon.eot?jilhky');
   src:  url('../fonts/icomoon.eot?jilhky#iefix') format('embedded-opentype'),
-    url('../fonts/icomoon.ttf?jilhky') format('truetype'),
-    url('../fonts/icomoon.woff?jilhky') format('woff'),
-    url('../fonts/icomoon.svg?jilhky#icomoon') format('svg');
+  url('../fonts/icomoon.ttf?jilhky') format('truetype'),
+  url('../fonts/icomoon.woff?jilhky') format('woff'),
+  url('../fonts/icomoon.svg?jilhky#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
