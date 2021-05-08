@@ -2,468 +2,508 @@
 <html lang="ua" xmlns:th="http://www.thymeleaf.org">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title th:text="${title}"></title>
-  <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,700|Roboto:400,500&amp;subset=cyrillic"
-    rel="stylesheet">
-  <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/fonts.css">
-  <link rel="stylesheet" href="css/jquery.fancybox.min.css">
-  <link rel="stylesheet" href="css/slick.css">
-  <link rel="stylesheet" href="css/jquery.formstyler.css">
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/media.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title th:text="${title}"></title>
+    <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,700|Roboto:400,500&amp;subset=cyrillic"
+          rel="stylesheet">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="css/slick.css">
+    <link rel="stylesheet" href="css/jquery.formstyler.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/media.css">
 </head>
 
 <body>
-  <header class="header">
+<header class="header">
     <div class="header__top">
-      <div class="container">
-        <div class="header__contacts">
-          <a class="header__phone" href="tel:380963092145">+38 (066) 023 93 36</a>
-          <a class="header__email" href="#">example@gmail.com</a>
-          <a data-fancybox data-src="#modal" href="javascript:" class="header__btn">Вхід</a>
+        <div class="container">
+            <div class="header__contacts">
+                <a class="header__phone" href="tel:380963092145">+38 (066) 023 93 36</a>
+                <a class="header__email" href="#">example@gmail.com</a>
+                <a data-fancybox data-src="#login" href="javascript:" class="header__btn">Вхід</a>
+            </div>
         </div>
-      </div>
     </div>
     <div class="header__content">
-      <div class="container">
-        <div class="header__content-inner">
-          <div class="header__logo">
-            <a href="#">
-              <img height="36" src="img/logo.png" alt="">
-            </a>
-          </div>
-          <nav class="menu">
-            <div class="header__btn-menu">
-              <span class="icon-bars"></span>
-            </div>
-            <ul>
-              <li><a onclick="EPPZScrollTo.scrollVerticalToElementById('slider',1)">Головна</a></li>
-              <li><a onclick="EPPZScrollTo.scrollVerticalToElementById('services',1)">Послуги</a></li>
-              <li><a onclick="EPPZScrollTo.scrollVerticalToElementById('about',1)">Про нас</a></li>
-              <li><a onclick="EPPZScrollTo.scrollVerticalToElementById('form',1)">Консультація</a></li>
-              <li><a onclick="EPPZScrollTo.scrollVerticalToElementById('news',1)">Новини</a></li>
-              <li><a onclick="EPPZScrollTo.scrollVerticalToElementById('footer',1)">Контакти</a></li>
-            </ul>
-          </nav>
-        </div>
-      </div>
-    </div>
-  </header>
-  <section id="slider" class="slider">
-    <div class="container">
-      <div class="slider__inner">
-        <div class="slider__item">
-          <div class="slider__item-content">
-            <div class="slider__title">
-              РЕСТАВРАЦІЯ ПОДУШОК
-            </div>
-            <div class="slider__text">
-              Ваші подушки втратили форму?  З них висипається перо?  Негарний зовнішній вигляд?  Ми пропонуємо вам їх оновити!
-            </div>
-            <a data-fancybox data-src="#modal" href="javascript:" class="slider__btn default-btn">
-              Детальніше
-            </a>
-          </div>
-        </div>
-        <div class="slider__item">
-          <div class="slider__item-content">
-            <div class="slider__title">
-              ПОШИВ ТА РЕМОНТ ОДЯГУ
-            </div>
-            <div class="slider__text">
-              Не знаєте чим прикрасити свій гардероб? Можливо, у вас є улюблені речі, які втратили колишню красу? Дайте своєму одягу нове життя!
-            </div>
-            <a data-fancybox data-src="#modal" href="javascript:" class="slider__btn default-btn">
-              Детальніше
-            </a>
-          </div>
-        </div>
-        <div class="slider__item">
-          <div class="slider__item-content">
-            <div class="slider__title">
-              ПОСТІЛЬНА БІЛИЗНА
-            </div>
-            <div class="slider__text">
-              Купити за ціною виробника: простирадла, наволочки, підодіяльники, напірники.
-              Подушки з холофайберу: для сну, дитячі, для вагітних та декоративні на будь-який смак. Акуратний пошив. Великий вибір.
-              У Вас є унікальна можливість зібрати свій індивідуальний комплект постільної білизни потрібних розмірів.
-            </div>
-            <a data-fancybox data-src="#modal" href="javascript:" class="slider__btn default-btn">
-              Детальніше
-            </a>
-          </div>
-        </div>
-        <div class="slider__item">
-          <div class="slider__item-content">
-            <div class="slider__title">
-              ТОВАРИ ДЛЯ РУКОДІЛЛЯ ТА ШИТТЯ
-            </div>
-            <div class="slider__text">
-              Загубили гудзик? Не працює змійка? Потрібна нитка гавайської хвилі або стрічка бузкового кольору?
-              Принесли джинси до іншого Ательє, а там потрібна своя змійка? Скоріше до нас, ми маємо великий вибір фурнітури на любий смак і гаманець.
-              Для клієнтів нашого Ательє постійна знижка на фурнітуру.
-            </div>
-            <a data-fancybox data-src="#modal" href="javascript:" class="slider__btn default-btn">
-              Детальніше
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  
-  <section id="services" class="services">
-    <div class="container">
-      <div class="services__top">
-        <div class="services__title-box">
-          <div class="services__title">
-            Наші послуги
-          </div>
-          <div class="services__text">
-            Індивідуальний підхід до кожного клієнта. Доступна ціна.
-          </div>
-        </div>
-        <div class="services__btn">
-          <a href="#">
-            Показати усі послуги
-          </a>
-        </div>
-      </div>
-      <div class="services__items">
-        <div class="services__item">
-          <img src="img/about-1.png" alt="">
-          <div class="services__item-title">
-            Пошив та ремонт
-          </div>
-          <div class="services__item-text">
-            <p>
-              Ательє по ремонту одягу -  допоможе Вам одягнутися не тільки красиво, зручно, стильно, але й унікально.
-              Адже те, що Ви носите, повинно бути в гармонії з Вашим внутрішнім світом.
-            </p>
-            <p>
-              Головні правила, якими ми керуємося в роботі - це безумовно якісно зшита річ і гарний настрій клієнта.
-            </p>
-              Ми також можемо виконати перекрій і підігнання одягу по фігурі зі зміною фасону і додаванням нових дизайнерських рішень.
-              Послуги з перекрою і підгонці одягу: підгін костюма, підгін плаща, підгін піджака, підгін плаття, підгін пальто і т.д.
-            <p>
-              Здійснюємо також терміновий ремонт одягу: пришити латочку, ремонт коміра, заштопати джинси або куртку, укоротити штани, спідницю і багато чого іншого.
-              Так само у нас є відділ з фурнітурою.
-            </p>
-          </div>
-          <div class="services__item-btn">
-            <a class="services__item-link" href="#">Детальніше</a>
-            <a data-fancybox data-src="#modal" href="javascript:" class="default-btn">
-              Замовити
-            </a>
-          </div>
-        </div>
-        <div class="services__item">
-          <img src="img/about-2.png" alt="">
-          <div class="services__item-title">
-            Реставрація подушок та перин
-          </div>
-          <div class="services__item-text">
-            <p>
-              Чистка подушок та перин на спеціальному сертифікованому обладнанні кожної подушки чи перини окремо можливо в присутності замовника.
-            </p>
-            <p>
-              Очищення, разпушуванння, просушування та дезинфекція пухо-пір’яної маси.
-            </p>
-            <p>
-              Заміна напірника, зміна розміру і форми виробів на замовлення, підбір забарвлення на будь-який смак з якісних тканин.
-              Чистка та пошиття, перешиття перин.
-            </p>
-            <p>
-              Результат чистки подушок - це здоровий та комфортний сон без алергії. Подаруйте друге життя улюбленій подушці!
-            </p>
-          </div>
-          <div class="services__item-btn">
-            <a class="services__item-link" href="#">Детальніше</a>
-            <a data-fancybox data-src="#modal" href="javascript:" class="default-btn">
-              Замовити
-            </a>
-          </div>
-        </div>
-        <div class="services__item">
-          <img src="img/about-3.png" alt="">
-          <div class="services__item-title">
-            Виробництво постільної білизни та подушок
-          </div>
-          <div class="services__item-text">
-            <p>
-              У нас Ви запросто підберете для себе постільну білизну, подушки, ковдри, наматрацники, наволочки, напірники, простирадла і підковдри серед широкого асортименту.
-            </p>
-            <p>
-              Ви можете замовити у нас послугу пошиття постільних комплектів, вибравши тканину.
-            </p>
-            <p>
-              У нас Ви знайдете подушки різних ромірів та видів: для сну, дитячі, для вагітних та декоративні на будь-який смак.
-            </p>
-            <p>
-              Ми виготовимо вироби виходячи з вашого замовлення і потреби.  Ми гарантуємо якість пошиття і матеріалу.
-            </p>
-            <p>
-              Працюємо з провідними виробниками тканини з Китаю, Пакистану, Білорусії та Узбекистану.
-            </p>
-          </div>
-          <div class="services__item-btn">
-            <a class="services__item-link" href="#">Детальніше</a>
-            <a data-fancybox data-src="#modal" href="javascript:" class="default-btn">
-              Замовити
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  
-  <section id="about" class="about">
-    <div class="container">
-      <div class="about__inner">
-        <div class="about__title">
-          Про нас
-        </div>
-        <div class="about__text">
-          "Ательє Мод" - це безліч задоволених клієнтів та надання якісних послуг з 2009 року. Доступні ціни, зручне розташування, індивідуальний підхід до кожного клієнта.
-          <p>
-            Ваш комфорт - це наша робота!
-          </p>
-         </div>
-        <a href="#" class="about__btn default-btn">
-          Дізнатися більше
-        </a>
-      </div>
-    </div>
-  </section>
-  
-  <section id="form" class="form">
-    <div class="container">
-      <div class="form__inner">
-        <div class="form__content">
-          <div class="form__title-box">
-            <div class="form__title">
-              Отримати консультацію
-            </div>
-            <div class="form__text">
-              "Ательє Мод" - це безліч задоволених клієнтів та надання якісних послуг з 2009 року. Доступні ціни, зручне розташування, індивідуальний підхід до кожного клієнта.
-            </div>
-          </div>
-          <div class="form__box">
-            <form>
-              <div class="form__box-inner">
-                <div class="form__box-left">
-                  <label>
-                    E-mail
-                    <input type="text">
-                  </label>
-                  <label>
-                    Контактний телефон
-                    <input type="text">
-                  </label>
-                  <label>
-                    ПІБ
-                    <input type="text">
-                  </label>
-                  <label>
-                    Тема запитання
-                    <select>
-                      <option>Питання 1</option>
-                      <option>Питання 2</option>
-                      <option>Питання 3</option>
-                      <option>Питання 4</option>
-                    </select>
-                  </label>
+        <div class="container">
+            <div class="header__content-inner">
+                <div class="header__logo">
+                    <a href="#">
+                        <img height="36" src="img/logo.png" alt="">
+                    </a>
                 </div>
-                <div class="form__box-right">
-                  <label>
-                    Запитання
-                    <textarea></textarea>
-                  </label>
-                  <button class="default-btn" type="submit">Отримати консультацію</button>
+                <nav class="menu">
+                    <div class="header__btn-menu">
+                        <span class="icon-bars"></span>
+                    </div>
+                    <ul>
+                        <li><a onclick="EPPZScrollTo.scrollVerticalToElementById('slider',1)">Головна</a></li>
+                        <li><a onclick="EPPZScrollTo.scrollVerticalToElementById('services',1)">Послуги</a></li>
+                        <li><a onclick="EPPZScrollTo.scrollVerticalToElementById('about',1)">Про нас</a></li>
+                        <li><a onclick="EPPZScrollTo.scrollVerticalToElementById('form',1)">Консультація</a></li>
+                        <li><a onclick="EPPZScrollTo.scrollVerticalToElementById('news',1)">Новини</a></li>
+                        <li><a onclick="EPPZScrollTo.scrollVerticalToElementById('footer',1)">Контакти</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+<section id="slider" class="slider">
+    <div class="container">
+        <div class="slider__inner">
+            <div class="slider__item">
+                <div class="slider__item-content">
+                    <div class="slider__title">
+                        РЕСТАВРАЦІЯ ПОДУШОК
+                    </div>
+                    <div class="slider__text">
+                        Ваші подушки втратили форму? З них висипається перо? Негарний зовнішній вигляд? Ми пропонуємо
+                        вам їх оновити!
+                    </div>
+                    <a data-fancybox data-src="#modal" href="javascript:" class="slider__btn default-btn">
+                        Детальніше
+                    </a>
                 </div>
-              </div>
-            </form>
-          </div>
+            </div>
+            <div class="slider__item">
+                <div class="slider__item-content">
+                    <div class="slider__title">
+                        ПОШИВ ТА РЕМОНТ ОДЯГУ
+                    </div>
+                    <div class="slider__text">
+                        Не знаєте чим прикрасити свій гардероб? Можливо, у вас є улюблені речі, які втратили колишню
+                        красу? Дайте своєму одягу нове життя!
+                    </div>
+                    <a data-fancybox data-src="#modal" href="javascript:" class="slider__btn default-btn">
+                        Детальніше
+                    </a>
+                </div>
+            </div>
+            <div class="slider__item">
+                <div class="slider__item-content">
+                    <div class="slider__title">
+                        ПОСТІЛЬНА БІЛИЗНА
+                    </div>
+                    <div class="slider__text">
+                        Купити за ціною виробника: простирадла, наволочки, підодіяльники, напірники.
+                        Подушки з холофайберу: для сну, дитячі, для вагітних та декоративні на будь-який смак. Акуратний
+                        пошив. Великий вибір.
+                        У Вас є унікальна можливість зібрати свій індивідуальний комплект постільної білизни потрібних
+                        розмірів.
+                    </div>
+                    <a data-fancybox data-src="#modal" href="javascript:" class="slider__btn default-btn">
+                        Детальніше
+                    </a>
+                </div>
+            </div>
+            <div class="slider__item">
+                <div class="slider__item-content">
+                    <div class="slider__title">
+                        ТОВАРИ ДЛЯ РУКОДІЛЛЯ ТА ШИТТЯ
+                    </div>
+                    <div class="slider__text">
+                        Загубили гудзик? Не працює змійка? Потрібна нитка гавайської хвилі або стрічка бузкового
+                        кольору?
+                        Принесли джинси до іншого Ательє, а там потрібна своя змійка? Скоріше до нас, ми маємо великий
+                        вибір фурнітури на любий смак і гаманець.
+                        Для клієнтів нашого Ательє постійна знижка на фурнітуру.
+                    </div>
+                    <a data-fancybox data-src="#modal" href="javascript:" class="slider__btn default-btn">
+                        Детальніше
+                    </a>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </section>
-  
-  <section class="advantages">
-    <div class="container">
-      <div class="advantages__inner">
-        <div class="advantages-item">
-          <div class="advantages__title">
-            Сотні постійних клієнтів
-          </div>
-          <div class="advantages__text">
-            Люди довіряють нам, адже ми виконуємо свою роботу на совість!
-          </div>
-        </div>
-        <div class="advantages-item">
-          <div class="advantages__title">
-            Відмінне знання своєї справи
-          </div>
-          <div class="advantages__text">
-            Дозволяє нам швидко та якісно виконати будь-яку вашу забаганку.
-          </div>
-        </div>
-        <div class="advantages-item">
-          <div class="advantages__title">
-            Великий досвід
-          </div>
-          <div class="advantages__text">
-            Ми має великий досвід, тому ви точно будете задоволені.
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+</section>
 
-  <section id="news" class="news">
-    <div class="container">
-      <div class="news__top">
-        <div class="news__title-box">
-          <div class="news__title">
-            Новини нашого Ательє
-          </div>
-          <div class="news__text">
-            Дізнайся, що нового відбувається у нас. А також ти можеш ознайомитись із цікавими матеріалами.
-          </div>
-        </div>
-        <div class="news__btn">
-          <a href="#">
-            Відкрити всі новини
-          </a>
-        </div>
-      </div>
-      <div class="news__inner">
-        <div class="news__slider">
-          <div class="news__slider-inner">
-            <div class="news__slider-item">
-              <div class="news__slider-title">
-                Чому потрібно чистити подушки?
-              </div>
-              <div class="news__slider-text">
-                «Тому що домашні пилові кліщі, що разом з пилом потрапляють в середину подушок, викликають різноманітні види алергії, неприємний запах та збитість подушок.
-                В останні десятиліття наголошується неухильне зростання числа алергічних захворювань, зараз за розповсюдженістю вони займають третє місце після серцево-судинних і ракових захворювань.
-                Алергію називають «хворобою цивілізації». У промислових містах від 10 до 40% дітей страждають на алергічні захворювання...»
-              </div>
-              <div class="news__slider-author">
-                Василь Пух, спеціаліст в області медицини
-              </div>
-            </div>
-            <div class="news__slider-item">
-              <div class="news__slider-title">
-                Чому потрібно чистити подушки?
-              </div>
-              <div class="news__slider-text">
-                «Тому що домашні пилові кліщі, що разом з пилом потрапляють в середину подушок, викликають різноманітні види алергії, неприємний запах та збитість подушок.
-                В останні десятиліття наголошується неухильне зростання числа алергічних захворювань, зараз за розповсюдженістю вони займають третє місце після серцево-судинних і ракових захворювань.
-                Алергію називають «хворобою цивілізації». У промислових містах від 10 до 40% дітей страждають на алергічні захворювання...»
-              </div>
-              <div class="news__slider-author">
-                Василь Пух, спеціаліст в області медицини
-              </div>
-            </div>
-            <div class="news__slider-item">
-              <div class="news__slider-title">
-                Чому потрібно чистити подушки?
-              </div>
-              <div class="news__slider-text">
-                «Тому що домашні пилові кліщі, що разом з пилом потрапляють в середину подушок, викликають різноманітні види алергії, неприємний запах та збитість подушок.
-                В останні десятиліття наголошується неухильне зростання числа алергічних захворювань, зараз за розповсюдженістю вони займають третє місце після серцево-судинних і ракових захворювань.
-                Алергію називають «хворобою цивілізації». У промислових містах від 10 до 40% дітей страждають на алергічні захворювання...»
-              </div>
-              <div class="news__slider-author">
-                Василь Пух, спеціаліст в області медицини
-              </div>
-            </div>
-          </div>
-        </div>
-        <a href="#" class="news__blog">
-          <div class="news__images">
-            <img src="img/news-1.jpg" alt="">
-            <div class="news__date">03.04</div>
-          </div>
-          <div class="news__blog-title">
-            Оновленний асортимент тканин
-          </div>
-          <div class="news__blog-text">
-            «Зовсім недавно, да нас надійшли нові тканини, які мають...»
-          </div>
-        </a>
-        <a href="#" class="news__blog">
-          <div class="news__images">
-            <img src="img/news-2.jpg" alt="">
-            <div class="news__date">12.04</div>
-          </div>
-          <div class="news__blog-title">
-            Зміни графіку роботи
-          </div>
-          <div class="news__blog-text">
-            «У зв'язку з погіршенням епідеміологічної ситуації наше Ательє змінює...»
-          </div>
-        </a>
-      </div>
-    </div>
-  </section>
 
-  <footer id="footer" class="footer">
+<section id="services" class="services">
+    <div class="container">
+        <div class="services__top">
+            <div class="services__title-box">
+                <div class="services__title">
+                    Наші послуги
+                </div>
+                <div class="services__text">
+                    Індивідуальний підхід до кожного клієнта. Доступна ціна.
+                </div>
+            </div>
+            <div class="services__btn">
+                <a href="#">
+                    Показати усі послуги
+                </a>
+            </div>
+        </div>
+        <div class="services__items">
+            <div class="services__item">
+                <img src="img/about-1.png" alt="">
+                <div class="services__item-title">
+                    Пошив та ремонт
+                </div>
+                <div class="services__item-text">
+                    <p>
+                        Ательє по ремонту одягу - допоможе Вам одягнутися не тільки красиво, зручно, стильно, але й
+                        унікально.
+                        Адже те, що Ви носите, повинно бути в гармонії з Вашим внутрішнім світом.
+                    </p>
+                    <p>
+                        Головні правила, якими ми керуємося в роботі - це безумовно якісно зшита річ і гарний настрій
+                        клієнта.
+                    </p>
+                    Ми також можемо виконати перекрій і підігнання одягу по фігурі зі зміною фасону і додаванням нових
+                    дизайнерських рішень.
+                    Послуги з перекрою і підгонці одягу: підгін костюма, підгін плаща, підгін піджака, підгін плаття,
+                    підгін пальто і т.д.
+                    <p>
+                        Здійснюємо також терміновий ремонт одягу: пришити латочку, ремонт коміра, заштопати джинси або
+                        куртку, укоротити штани, спідницю і багато чого іншого.
+                        Так само у нас є відділ з фурнітурою.
+                    </p>
+                </div>
+                <div class="services__item-btn">
+                    <a class="services__item-link" href="#">Детальніше</a>
+                    <a data-fancybox data-src="#modal" href="javascript:" class="default-btn">
+                        Замовити
+                    </a>
+                </div>
+            </div>
+            <div class="services__item">
+                <img src="img/about-2.png" alt="">
+                <div class="services__item-title">
+                    Реставрація подушок та перин
+                </div>
+                <div class="services__item-text">
+                    <p>
+                        Чистка подушок та перин на спеціальному сертифікованому обладнанні кожної подушки чи перини
+                        окремо можливо в присутності замовника.
+                    </p>
+                    <p>
+                        Очищення, разпушуванння, просушування та дезинфекція пухо-пір’яної маси.
+                    </p>
+                    <p>
+                        Заміна напірника, зміна розміру і форми виробів на замовлення, підбір забарвлення на будь-який
+                        смак з якісних тканин.
+                        Чистка та пошиття, перешиття перин.
+                    </p>
+                    <p>
+                        Результат чистки подушок - це здоровий та комфортний сон без алергії. Подаруйте друге життя
+                        улюбленій подушці!
+                    </p>
+                </div>
+                <div class="services__item-btn">
+                    <a class="services__item-link" href="#">Детальніше</a>
+                    <a data-fancybox data-src="#modal" href="javascript:" class="default-btn">
+                        Замовити
+                    </a>
+                </div>
+            </div>
+            <div class="services__item">
+                <img src="img/about-3.png" alt="">
+                <div class="services__item-title">
+                    Виробництво постільної білизни та подушок
+                </div>
+                <div class="services__item-text">
+                    <p>
+                        У нас Ви запросто підберете для себе постільну білизну, подушки, ковдри, наматрацники,
+                        наволочки, напірники, простирадла і підковдри серед широкого асортименту.
+                    </p>
+                    <p>
+                        Ви можете замовити у нас послугу пошиття постільних комплектів, вибравши тканину.
+                    </p>
+                    <p>
+                        У нас Ви знайдете подушки різних ромірів та видів: для сну, дитячі, для вагітних та декоративні
+                        на будь-який смак.
+                    </p>
+                    <p>
+                        Ми виготовимо вироби виходячи з вашого замовлення і потреби. Ми гарантуємо якість пошиття і
+                        матеріалу.
+                    </p>
+                    <p>
+                        Працюємо з провідними виробниками тканини з Китаю, Пакистану, Білорусії та Узбекистану.
+                    </p>
+                </div>
+                <div class="services__item-btn">
+                    <a class="services__item-link" href="#">Детальніше</a>
+                    <a data-fancybox data-src="#modal" href="javascript:" class="default-btn">
+                        Замовити
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="about" class="about">
+    <div class="container">
+        <div class="about__inner">
+            <div class="about__title">
+                Про нас
+            </div>
+            <div class="about__text">
+                "Ательє Мод" - це безліч задоволених клієнтів та надання якісних послуг з 2009 року. Доступні ціни,
+                зручне розташування, індивідуальний підхід до кожного клієнта.
+                <p>
+                    Ваш комфорт - це наша робота!
+                </p>
+            </div>
+            <a href="#" class="about__btn default-btn">
+                Дізнатися більше
+            </a>
+        </div>
+    </div>
+</section>
+
+<section id="form" class="form">
+    <div class="container">
+        <div class="form__inner">
+            <div class="form__content">
+                <div class="form__title-box">
+                    <div class="form__title">
+                        Отримати консультацію
+                    </div>
+                    <div class="form__text">
+                        "Ательє Мод" - це безліч задоволених клієнтів та надання якісних послуг з 2009 року. Доступні
+                        ціни, зручне розташування, індивідуальний підхід до кожного клієнта.
+                    </div>
+                </div>
+                <div class="form__box">
+                    <form>
+                        <div class="form__box-inner">
+                            <div class="form__box-left">
+                                <label>
+                                    E-mail
+                                    <input type="text">
+                                </label>
+                                <label>
+                                    Контактний телефон
+                                    <input type="text">
+                                </label>
+                                <label>
+                                    ПІБ
+                                    <input type="text">
+                                </label>
+                                <label>
+                                    Тема запитання
+                                    <select>
+                                        <option>Питання 1</option>
+                                        <option>Питання 2</option>
+                                        <option>Питання 3</option>
+                                        <option>Питання 4</option>
+                                    </select>
+                                </label>
+                            </div>
+                            <div class="form__box-right">
+                                <label>
+                                    Запитання
+                                    <textarea></textarea>
+                                </label>
+                                <button class="default-btn" type="submit">Отримати консультацію</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="advantages">
+    <div class="container">
+        <div class="advantages__inner">
+            <div class="advantages-item">
+                <div class="advantages__title">
+                    Сотні постійних клієнтів
+                </div>
+                <div class="advantages__text">
+                    Люди довіряють нам, адже ми виконуємо свою роботу на совість!
+                </div>
+            </div>
+            <div class="advantages-item">
+                <div class="advantages__title">
+                    Відмінне знання своєї справи
+                </div>
+                <div class="advantages__text">
+                    Дозволяє нам швидко та якісно виконати будь-яку вашу забаганку.
+                </div>
+            </div>
+            <div class="advantages-item">
+                <div class="advantages__title">
+                    Великий досвід
+                </div>
+                <div class="advantages__text">
+                    Ми має великий досвід, тому ви точно будете задоволені.
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="news" class="news">
+    <div class="container">
+        <div class="news__top">
+            <div class="news__title-box">
+                <div class="news__title">
+                    Новини нашого Ательє
+                </div>
+                <div class="news__text">
+                    Дізнайся, що нового відбувається у нас. А також ти можеш ознайомитись із цікавими матеріалами.
+                </div>
+            </div>
+            <div class="news__btn">
+                <a href="#">
+                    Відкрити всі новини
+                </a>
+            </div>
+        </div>
+        <div class="news__inner">
+            <div class="news__slider">
+                <div class="news__slider-inner">
+                    <div class="news__slider-item">
+                        <div class="news__slider-title">
+                            Чому потрібно чистити подушки?
+                        </div>
+                        <div class="news__slider-text">
+                            «Тому що домашні пилові кліщі, що разом з пилом потрапляють в середину подушок, викликають
+                            різноманітні види алергії, неприємний запах та збитість подушок.
+                            В останні десятиліття наголошується неухильне зростання числа алергічних захворювань, зараз
+                            за розповсюдженістю вони займають третє місце після серцево-судинних і ракових захворювань.
+                            Алергію називають «хворобою цивілізації». У промислових містах від 10 до 40% дітей
+                            страждають на алергічні захворювання...»
+                        </div>
+                        <div class="news__slider-author">
+                            Василь Пух, спеціаліст в області медицини
+                        </div>
+                    </div>
+                    <div class="news__slider-item">
+                        <div class="news__slider-title">
+                            Чому потрібно чистити подушки?
+                        </div>
+                        <div class="news__slider-text">
+                            «Тому що домашні пилові кліщі, що разом з пилом потрапляють в середину подушок, викликають
+                            різноманітні види алергії, неприємний запах та збитість подушок.
+                            В останні десятиліття наголошується неухильне зростання числа алергічних захворювань, зараз
+                            за розповсюдженістю вони займають третє місце після серцево-судинних і ракових захворювань.
+                            Алергію називають «хворобою цивілізації». У промислових містах від 10 до 40% дітей
+                            страждають на алергічні захворювання...»
+                        </div>
+                        <div class="news__slider-author">
+                            Василь Пух, спеціаліст в області медицини
+                        </div>
+                    </div>
+                    <div class="news__slider-item">
+                        <div class="news__slider-title">
+                            Чому потрібно чистити подушки?
+                        </div>
+                        <div class="news__slider-text">
+                            «Тому що домашні пилові кліщі, що разом з пилом потрапляють в середину подушок, викликають
+                            різноманітні види алергії, неприємний запах та збитість подушок.
+                            В останні десятиліття наголошується неухильне зростання числа алергічних захворювань, зараз
+                            за розповсюдженістю вони займають третє місце після серцево-судинних і ракових захворювань.
+                            Алергію називають «хворобою цивілізації». У промислових містах від 10 до 40% дітей
+                            страждають на алергічні захворювання...»
+                        </div>
+                        <div class="news__slider-author">
+                            Василь Пух, спеціаліст в області медицини
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a href="#" class="news__blog">
+                <div class="news__images">
+                    <img src="img/news-1.jpg" alt="">
+                    <div class="news__date">03.04</div>
+                </div>
+                <div class="news__blog-title">
+                    Оновленний асортимент тканин
+                </div>
+                <div class="news__blog-text">
+                    «Зовсім недавно, да нас надійшли нові тканини, які мають...»
+                </div>
+            </a>
+            <a href="#" class="news__blog">
+                <div class="news__images">
+                    <img src="img/news-2.jpg" alt="">
+                    <div class="news__date">12.04</div>
+                </div>
+                <div class="news__blog-title">
+                    Зміни графіку роботи
+                </div>
+                <div class="news__blog-text">
+                    «У зв'язку з погіршенням епідеміологічної ситуації наше Ательє змінює...»
+                </div>
+            </a>
+        </div>
+    </div>
+</section>
+
+<footer id="footer" class="footer">
     <div class="footer__content">
-      <div class="container">
-        <div class="footer__inner">
-          <div class="footer__info">
-            <div class="footer__title">
-              Приходь! Ми чекаємо на тебе =)
+        <div class="container">
+            <div class="footer__inner">
+                <div class="footer__info">
+                    <div class="footer__title">
+                        Приходь! Ми чекаємо на тебе =)
+                    </div>
+                    <div class="footer__text">
+                        Ви маєте змогу, зв'язатись з нами зручним для Вас способом, або залишити заявку, аби ми
+                        зв'язались з Вами.
+                    </div>
+                    <a data-fancybox data-src="#modal" href="javascript:" class="footer__btn">
+                        Безкоштовна консультація
+                    </a>
+                    <ul class="footer__list">
+                        <li><a class="footer__phone" href="tel:380660239336">+38 (066) 023 93 36</a></li>
+                        <li><a href="#">example.email@gmail.com</a></li>
+                        <li><a class="footer__adress" href="#">Лозова, м-н 1, 21</a></li>
+                    </ul>
+                </div>
+                <div class="footer__map">
+                    <iframe height="250px"
+                            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d655.9642979163693!2d36.289527!3d48.8799989!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xccd2ef3688aba3de!2z0JDRgtC10LvRjNC1INCc0L7QtCDQuCDQoNC10YHRgtCw0LLRgNCw0YbQuNGPINCf0L7QtNGD0YjQtdC6!5e0!3m2!1sru!2sua!4v1617912458313!5m2!1sru!2sua"
+                            frameborder="0" style="border:0" allowfullscreen></iframe>
+                </div>
             </div>
-            <div class="footer__text">
-              Ви маєте змогу, зв'язатись з нами зручним для Вас способом, або залишити заявку, аби ми зв'язались з Вами.
-            </div>
-            <a data-fancybox data-src="#modal" href="javascript:" class="footer__btn">
-              Безкоштовна консультація
-            </a>
-            <ul class="footer__list">
-              <li><a class="footer__phone" href="tel:380660239336">+38 (066) 023 93 36</a></li>
-              <li><a href="#">example.email@gmail.com</a></li>
-              <li><a class="footer__adress" href="#">Лозова, м-н 1, 21</a></li>
-            </ul>
-          </div>
-          <div class="footer__map">
-            <iframe height="250px" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d655.9642979163693!2d36.289527!3d48.8799989!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xccd2ef3688aba3de!2z0JDRgtC10LvRjNC1INCc0L7QtCDQuCDQoNC10YHRgtCw0LLRgNCw0YbQuNGPINCf0L7QtNGD0YjQtdC6!5e0!3m2!1sru!2sua!4v1617912458313!5m2!1sru!2sua" frameborder="0" style="border:0" allowfullscreen></iframe>
-          </div>
         </div>
-      </div>
     </div>
     <div class="footer__copy">
-      <div class="container">
-        <div class="copy__text">
-          © 2021 Designed by Nelson. Усі права під захистом.
+        <div class="container">
+            <div class="copy__text">
+                © 2021 Designed by Nelson. Усі права під захистом.
+            </div>
         </div>
-      </div>
     </div>
-  </footer> 
+</footer>
 
-  <div id="modal">
-    <form action="/" method="post">
-      <input type="text" name="login" placeholder="Логін">
-      <input type="text" name="password" placeholder="Пароль">
-      <input type="submit" value="Увійти">
-    </form>
-  </div>
+<form id="login">
+    <input type="text" name="login" placeholder="Логін">
+    <input type="text" name="password" placeholder="Пароль">
+    <input type="submit" value="Увійти">
+    <div id="message" class="message"></div>
+    <div class="reg__account">
+        <a data-fancybox data-src="#registration" href="javascript:">Немає аккаунту? Зареєструватися</a>
+    </div>
+</form>
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="js/jquery.fancybox.min.js"></script>
-  <script src="js/slick.min.js"></script>
-  <script src="js/jquery.formstyler.min.js"></script>
-  <script src="js/jquery.malihu.PageScroll2id.min.js"></script>
-  <script src="js/main.js"></script>
+<form id="registration">
+    <input type="text" name="login_new" placeholder="Логін">
+    <input type="text" name="password_new" placeholder="Пароль">
+    <input type="text" name="repassword_new" placeholder="Повторіть пароль">
+    <input type="submit" value="Зареєструватися">
+    <div id="message_reg" class="message"></div>
+</form>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="js/jquery.fancybox.min.js"></script>
+<script src="js/slick.min.js"></script>
+<script src="js/jquery.formstyler.min.js"></script>
+<script src="js/jquery.malihu.PageScroll2id.min.js"></script>
+<script src="js/main.js"></script>
 </body>
 
 </html>
