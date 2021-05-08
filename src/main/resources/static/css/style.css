@@ -103,7 +103,10 @@ header{
 .menu li + li{
   padding-left: 10px;
 }
-#modal{
+#login{
+  display: none;
+}
+#registration{
   display: none;
 }
 .slider{
