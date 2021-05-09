@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ua" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Послуги</title>
+    <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,700|Roboto:400,500&amp;subset=cyrillic" rel="stylesheet">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/pillow_style.css">
+    <link rel="stylesheet" href="css/media.css">
+</head>
+
+<body>
+<header class="header">
+    <div class="header__top">
+        <div class="container">
+            <div class="header__contacts">
+                <a class="header__phone" href="tel:380963092145">+38 (066) 023 93 36</a>
+                <a class="header__email" href="#">example@gmail.com</a>
+                <a href="/" class="header__btn">На головну</a>
+            </div>
+        </div>
+    </div>
+</header>
+<section id="services" class="services">
+    <div class="container">
+        <div class="services__top">
+            <div class="services__title-box">
+                <div class="services__title">
+                    Наші послуги
+                </div>
+                <div class="services__text">
+                    Індивідуальний підхід до кожного клієнта. Доступна ціна.
+                </div>
+            </div>
+            <div class="services__btn">
+                <a href="#">
+                    Показати усі послуги
+                </a>
+            </div>
+        </div>
+        <div class="services__items" th:each="el : ${pillows}">
+            <div class="services__item">
+                <img src="img/pillow.png" alt="">
+                <div class="services__item-title" th:text="${el.getHeight()} + 'x' + ${el.getWidth()} + ' - ' + ${el.getPrice()} + ' грн.'"></div>
+                <div class="services__item-btn">
+                    <a class="services__item-link" href="#">Детальніше</a>
+                    <a class="default-btn" href="#">
+                        Замовити
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+</body>
+
+</html>

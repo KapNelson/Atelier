@@ -1,10 +1,13 @@
 package com.web.atelier.controllers;
 
+import com.web.atelier.models.Pillow;
 import com.web.atelier.models.User;
+import com.web.atelier.repo.PillowRepository;
 import com.web.atelier.repo.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,23 +18,44 @@ import java.util.Optional;
 
 @Controller
 public class MainController {
+    public static final BCryptPasswordEncoder PASSWORD_ENCODER = new BCryptPasswordEncoder(4);
 
     @Autowired
     private UserRepository userRepository;
+    @Autowired
+    private PillowRepository pillowRepository;
+
+    @GetMapping("/admin")
+    public String goToAdminPage(Model model) {
+        return "admin";
+    }
 
     @GetMapping("/")
-    public String index(Model model) {
-        model.addAttribute("title", "Главная страница");
+    public String goToMainPage(Model model) {
         return "index";
+    }
+
+    @GetMapping("/pillow")
+    public String openPillowPrice(Model model) {
+        Iterable<Pillow> pillows = pillowRepository.findAll();
+        model.addAttribute("pillows", pillows);
+        return "pillow";
+    }
+
+    @GetMapping("/error")
+    public String error(Model model) {
+        Iterable<Pillow> pillows = pillowRepository.findAll();
+        model.addAttribute("pillows", pillows);
+        return "pillow";
     }
 
     @PostMapping("/reg")
     public ResponseEntity<HttpStatus> regNewUser(@RequestParam String login_new, @RequestParam String password_new, @RequestParam String repassword_new, Model model) {
         Optional<User> userOpt = userRepository.findById(login_new);
 
-        if(!userOpt.isPresent()) {
+        if (!userOpt.isPresent()) {
             if (password_new.equals(repassword_new)) {
-                User user = new User(login_new, password_new);
+                User user = new User(login_new, PASSWORD_ENCODER.encode(password_new), "ROLE_USER", true);
                 userRepository.save(user);
                 return new ResponseEntity<>(HttpStatus.CREATED);
             } else {
@@ -45,9 +69,9 @@ public class MainController {
     @PostMapping("/login")
     public ResponseEntity<HttpStatus> authorizationUser(@RequestParam String login, @RequestParam String password, Model model) {
         Optional<User> userOpt = userRepository.findById(login);
-        if(userOpt.isPresent()){
+        if (userOpt.isPresent()) {
             User user = userOpt.get();
-            if(user.getPasword().equals(password)) {
+            if (user.getPassword().equals(password)) {
                 return new ResponseEntity<>(HttpStatus.OK);
             } else {
                 return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);

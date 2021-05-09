@@ -13,8 +13,8 @@ $(function () {
     });
 });
 
-(function($) {
-    $(window).on("load", function() {
+(function ($) {
+    $(window).on("load", function () {
         $('.menu a').mPageScroll2id();
     });
 })(jQuery);
@@ -55,3 +55,9 @@ $('#login').submit(function (e) {
         }
     });
 });
+
+function onBodyLoad() {
+    if (window.location.href.endsWith('#login')) {
+        $("#login_link").fancybox().trigger('click');
+    }
+}
