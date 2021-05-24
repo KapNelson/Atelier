@@ -6,8 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Головна сторінка</title>
-    <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,700|Roboto:400,500&amp;subset=cyrillic"
-          rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,700|Roboto:400,500&amp;subset=cyrillic"rel="stylesheet">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/fonts.css">
     <link rel="stylesheet" href="css/jquery.fancybox.min.css">
@@ -44,7 +43,7 @@
                         <li><a href="#slider" rel='m_PageScroll2id'>Головна</a></li>
                         <li><a href="#services" rel='m_PageScroll2id'>Послуги</a></li>
                         <li><a href="#about" rel='m_PageScroll2id'>Про нас</a></li>
-                        <li><a href="#form" rel='m_PageScroll2id'>Консультація</a></li>
+                        <li><a href="#form" rel='m_PageScroll2id'>Відгук</a></li>
                         <li><a href="#news" rel='m_PageScroll2id'>Новини</a></li>
                         <li><a href="#footer" rel='m_PageScroll2id'>Контакти</a></li>
                     </ul>
@@ -265,7 +264,7 @@
             <div class="form__content">
                 <div class="form__title-box">
                     <div class="form__title">
-                        Отримати консультацію
+                        Залишити відгук
                     </div>
                     <div class="form__text">
                         "Ательє Мод" - це безліч задоволених клієнтів та надання якісних послуг з 2009 року. Доступні
@@ -273,37 +272,27 @@
                     </div>
                 </div>
                 <div class="form__box">
-                    <form>
+                    <form action="/addreview" method="post">
                         <div class="form__box-inner">
                             <div class="form__box-left">
                                 <label>
-                                    E-mail
-                                    <input type="text">
+                                    ПІБ
+                                    <input type="text" name="name">
                                 </label>
                                 <label>
                                     Контактний телефон
-                                    <input type="text">
+                                    <input type="text" name="phone">
                                 </label>
                                 <label>
-                                    ПІБ
-                                    <input type="text">
-                                </label>
-                                <label>
-                                    Тема запитання
-                                    <select>
-                                        <option>Питання 1</option>
-                                        <option>Питання 2</option>
-                                        <option>Питання 3</option>
-                                        <option>Питання 4</option>
-                                    </select>
+                                    <br/>
+                                <button class="default-btn" type="submit">Залишити відгук</button>
                                 </label>
                             </div>
                             <div class="form__box-right">
                                 <label>
-                                    Запитання
-                                    <textarea></textarea>
+                                    Відгук
+                                    <textarea name="text"></textarea>
                                 </label>
-                                <button class="default-btn" type="submit">Отримати консультацію</button>
                             </div>
                         </div>
                     </form>
@@ -364,53 +353,12 @@
         <div class="news__inner">
             <div class="news__slider">
                 <div class="news__slider-inner">
-                    <div class="news__slider-item">
+                    <div class="news__slider-item" th:each="el : ${reviews}">
                         <div class="news__slider-title">
-                            Чому потрібно чистити подушки?
+                            Відгук
                         </div>
-                        <div class="news__slider-text">
-                            «Тому що домашні пилові кліщі, що разом з пилом потрапляють в середину подушок, викликають
-                            різноманітні види алергії, неприємний запах та збитість подушок.
-                            В останні десятиліття наголошується неухильне зростання числа алергічних захворювань, зараз
-                            за розповсюдженістю вони займають третє місце після серцево-судинних і ракових захворювань.
-                            Алергію називають «хворобою цивілізації». У промислових містах від 10 до 40% дітей
-                            страждають на алергічні захворювання...»
-                        </div>
-                        <div class="news__slider-author">
-                            Василь Пух, спеціаліст в області медицини
-                        </div>
-                    </div>
-                    <div class="news__slider-item">
-                        <div class="news__slider-title">
-                            Чому потрібно чистити подушки?
-                        </div>
-                        <div class="news__slider-text">
-                            «Тому що домашні пилові кліщі, що разом з пилом потрапляють в середину подушок, викликають
-                            різноманітні види алергії, неприємний запах та збитість подушок.
-                            В останні десятиліття наголошується неухильне зростання числа алергічних захворювань, зараз
-                            за розповсюдженістю вони займають третє місце після серцево-судинних і ракових захворювань.
-                            Алергію називають «хворобою цивілізації». У промислових містах від 10 до 40% дітей
-                            страждають на алергічні захворювання...»
-                        </div>
-                        <div class="news__slider-author">
-                            Василь Пух, спеціаліст в області медицини
-                        </div>
-                    </div>
-                    <div class="news__slider-item">
-                        <div class="news__slider-title">
-                            Чому потрібно чистити подушки?
-                        </div>
-                        <div class="news__slider-text">
-                            «Тому що домашні пилові кліщі, що разом з пилом потрапляють в середину подушок, викликають
-                            різноманітні види алергії, неприємний запах та збитість подушок.
-                            В останні десятиліття наголошується неухильне зростання числа алергічних захворювань, зараз
-                            за розповсюдженістю вони займають третє місце після серцево-судинних і ракових захворювань.
-                            Алергію називають «хворобою цивілізації». У промислових містах від 10 до 40% дітей
-                            страждають на алергічні захворювання...»
-                        </div>
-                        <div class="news__slider-author">
-                            Василь Пух, спеціаліст в області медицини
-                        </div>
+                        <div class="news__slider-text" th:text="${el.getText()}"></div>
+                        <div class="news__slider-author" th:text="${el.getName()}"></div>
                     </div>
                 </div>
             </div>
@@ -448,15 +396,17 @@
             <div class="footer__inner">
                 <div class="footer__info">
                     <div class="footer__title">
-                        Приходь! Ми чекаємо на тебе =)
+                        Графік роботи
                     </div>
                     <div class="footer__text">
-                        Ви маєте змогу, зв'язатись з нами зручним для Вас способом, або залишити заявку, аби ми
-                        зв'язались з Вами.
+                        Понеділок: 9:00 - 17:30<br/>
+                        Вівторок: 9:00 - 17:30<br/>
+                        Середа: 9:00 - 17:30<br/>
+                        Четвер: 9:00 - 17:30<br/>
+                        П'ятниця: 9:00 - 17:30<br/>
+                        Субота: 10:00 - 15:00<br/>
+                        Неділя: вихідний<br/>
                     </div>
-                    <a data-fancybox data-src="#modal" href="javascript:" class="footer__btn">
-                        Безкоштовна консультація
-                    </a>
                     <ul class="footer__list">
                         <li><a class="footer__phone" href="tel:380660239336">+38 (066) 023 93 36</a></li>
                         <li><a href="#">example.email@gmail.com</a></li>

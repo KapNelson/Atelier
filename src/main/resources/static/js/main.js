@@ -47,6 +47,7 @@ $('#login').submit(function (e) {
         data: $('#login').serialize(),
         success: function () {
             document.getElementById("message").innerHTML = "Вхід успішний!";
+            window.location.href = '/';
         },
         statusCode: {
             401: function () {

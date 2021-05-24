@@ -34,8 +34,8 @@ public class User {
         return password;
     }
 
-    public void setPassword(String pasword) {
-        this.password = pasword;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public String getRole() {
@@ -53,5 +53,4 @@ public class User {
     public void setEnabled(boolean enabled) {
         this.enabled = enabled;
     }
-
 }

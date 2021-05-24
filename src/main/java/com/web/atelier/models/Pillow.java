@@ -1,22 +1,16 @@
 package com.web.atelier.models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Pillow {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    @GeneratedValue(strategy=GenerationType.AUTO)
+    private Integer id;
     private int width;
     private int height;
     private float price;
 
-    public Pillow() {
-
-    }
 
     public Pillow(int width, int height, float price) {
         this.width = width;
@@ -24,8 +18,16 @@ public class Pillow {
         this.price = price;
     }
 
-    public long getId() {
+    public Pillow() {
+
+    }
+
+    public Integer getId() {
         return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public int getWidth() {

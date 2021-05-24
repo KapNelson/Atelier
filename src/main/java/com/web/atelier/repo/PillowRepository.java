@@ -2,6 +2,8 @@ package com.web.atelier.repo;
 
 import com.web.atelier.models.Pillow;
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
 
-public interface PillowRepository  extends CrudRepository<Pillow, Long> {
+@Repository
+public interface PillowRepository extends CrudRepository<Pillow, Integer> {
 }

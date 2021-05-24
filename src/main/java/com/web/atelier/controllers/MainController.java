@@ -1,10 +1,13 @@
 package com.web.atelier.controllers;
 
 import com.web.atelier.models.Pillow;
+import com.web.atelier.models.Review;
 import com.web.atelier.models.User;
 import com.web.atelier.repo.PillowRepository;
+import com.web.atelier.repo.ReviewRepository;
 import com.web.atelier.repo.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -24,26 +27,25 @@ public class MainController {
     private UserRepository userRepository;
     @Autowired
     private PillowRepository pillowRepository;
-
-    @GetMapping("/admin")
-    public String goToAdminPage(Model model) {
-        return "admin";
-    }
+    @Autowired
+    private ReviewRepository reviewRepository;
 
     @GetMapping("/")
     public String goToMainPage(Model model) {
+        Iterable<Review> reviews = reviewRepository.findTop3ByVerifiedOrderByIdDesc(true);
+        model.addAttribute("reviews", reviews);
         return "index";
+    }
+
+    @PostMapping("/addreview")
+    public String authorizationUser(@RequestParam String name, @RequestParam String phone, String text, Model model) {
+        Review review = new Review(name, phone, text);
+        reviewRepository.save(review);
+        return "redirect:";
     }
 
     @GetMapping("/pillow")
     public String openPillowPrice(Model model) {
-        Iterable<Pillow> pillows = pillowRepository.findAll();
-        model.addAttribute("pillows", pillows);
-        return "pillow";
-    }
-
-    @GetMapping("/error")
-    public String error(Model model) {
         Iterable<Pillow> pillows = pillowRepository.findAll();
         model.addAttribute("pillows", pillows);
         return "pillow";

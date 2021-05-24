@@ -1,0 +1,50 @@
+.container{
+    max-width: 1170px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+body{
+    font-family: 'PT Serif', serif;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 18px;
+    color: #000;
+}
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 5px;
+}
+.pillow__content{
+    padding: 10px 0px;
+}
+.form__box{
+    position: absolute;
+    left: 10%;
+}
+.pillow_list{
+    position: absolute;
+    left: 50%;
+    border: 2px solid #1fa0b5;
+}
+#add__form{
+    width: 300px;
+}
+#add__form input{
+    display: block;
+    width: 100%;
+    margin-bottom: 20px;
+    outline: none;
+    height: 40px;
+    border: 1px solid #e6e6e6;
+    padding: 0px 10px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+}
+#add__form input[type="submit"]{
+    background-color: #1fa0b5;
+    border: none;
+    cursor: pointer;
+}

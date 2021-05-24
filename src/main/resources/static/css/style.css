@@ -622,23 +622,21 @@ header{
 .footer__title{
   font-family: 'Roboto', sans-serif;
   font-weight: 500;
-  font-size: 16px;
+  font-size: 32px;
   color: #242765;
-  line-height: 36px;
+  line-height: 32px;
   letter-spacing: 0.5px;
 }
 .footer__text{
+  font-family: 'Roboto', sans-serif;
   color: #000;
+  font-size: 16px;
+  line-height: 16px;
   margin-bottom: 20px;
+  padding: 10px 0px;
 }
 .footer__info{
   max-width: 360px;
-}
-.footer__list{
-  padding-top: 10px;
-}
-.footer__list li{
-  margin-top: 10px;
 }
 .footer__list a{
   font-size: 16px;
