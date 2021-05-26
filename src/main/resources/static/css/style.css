@@ -853,6 +853,21 @@ header {
     border: none;
 }
 
+#logout {
+    width: 300px;
+}
+
+#logout a{
+    line-height: 36px;
+    color: #fff;
+    background-color: #242765;
+    padding: 5px 20px 4px 20px;
+    font-size: 16px;
+    display: block;
+    position: relative;
+    text-align: center;
+}
+
 .message {
     display: block;
     width: 100%;
