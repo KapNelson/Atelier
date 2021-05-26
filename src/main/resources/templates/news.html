@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ua" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Новини</title>
+    <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,700|Roboto:400,500&amp;subset=cyrillic"
+          rel="stylesheet">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/news_style.css">
+</head>
+
+<body>
+<header class="header">
+    <div class="header__top">
+        <div class="container">
+            <div class="header__contacts">
+                <a class="header__phone" href="tel:380669365234">+38 (066) 936 52 34</a>
+                <a class="header__email" href="mailto:atelier.lozova@gmail.com">atelier.lozova@gmail.com</a>
+                <a id="login_link" data-fancybox data-src="#login" href="javascript:" class="header__btn">Вхід</a>
+            </div>
+        </div>
+    </div>
+</header>
+
+<section class="top">
+    <div class="container">
+        <div class="services__top">
+            <div class="services__title-box">
+                <div class="services__title">
+                    Наші новини
+                </div>
+                <div class="services__text">
+                    Переглядай актуальну інформацію про зміни у житті ательє. Читай різноманітні новини та цікаві статті.
+                </div>
+            </div>
+            <div class="services__btn">
+                <a href="/">
+                    На головну
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="news">
+    <div class="container">
+        <div class="review__inner">
+            <div class="services__items">
+                <div class="services__item" th:each="el : ${news}">
+                    <div class="news__title">
+                        <div class="news__date" th:text="${el.getPublicationDateInString()}"></div>
+
+                        <div class="services__item-title" th:text="${el.getTitle()}"></div>
+                    </div>
+                    <div class="services__item-text" th:utext="${el.getTextWithIndentation()}"></div>
+                </div>
+            </div>
+            <nav class="pagination">
+                <ul class="page">
+                    <li class="page__item" th:each="el : ${newsNumber}">
+                        <a class="page-link" th:href="'?page=' + ${el.toString()}" th:text="${el+1}"></a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</section>
+
+<footer id="footer" class="footer">
+    <div class="footer__copy">
+        <div class="container">
+            <div class="copy__text">
+                © 2021 Designed by Ruslan Makhanov. Усі права під захистом.
+            </div>
+        </div>
+    </div>
+</footer>
+</body>
+
+</html>

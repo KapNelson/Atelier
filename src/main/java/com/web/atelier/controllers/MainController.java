@@ -1,8 +1,10 @@
 package com.web.atelier.controllers;
 
+import com.web.atelier.models.News;
 import com.web.atelier.models.Pillow;
 import com.web.atelier.models.Review;
 import com.web.atelier.models.User;
+import com.web.atelier.repo.NewsRepository;
 import com.web.atelier.repo.PillowRepository;
 import com.web.atelier.repo.ReviewRepository;
 import com.web.atelier.repo.UserRepository;
@@ -35,11 +37,17 @@ public class MainController {
     private PillowRepository pillowRepository;
     @Autowired
     private ReviewRepository reviewRepository;
+    @Autowired
+    private NewsRepository newsRepository;
 
     @GetMapping("/")
     public String goToMainPage(Model model) {
         Iterable<Review> reviews = reviewRepository.findTop3ByVerifiedOrderByIdDesc(true);
         model.addAttribute("reviews", reviews);
+
+        Iterable<News> news = newsRepository.findTop2ByOrderByPublicationDateDesc();
+        model.addAttribute("news", news);
+
         return "index";
     }
 
@@ -51,14 +59,30 @@ public class MainController {
     }
 
     @GetMapping("/pillow")
-    public String openPillowPrice(Model model) {
+    public String openPillowPage(Model model) {
         Iterable<Pillow> pillows = pillowRepository.findAll();
         model.addAttribute("pillows", pillows);
         return "pillow";
     }
 
+    @GetMapping("/news")
+    public String openNewsPage(Model model, @PageableDefault(sort = {"id"}, direction = Sort.Direction.DESC) Pageable pageable) {
+        Page<News> news;
+
+        news = newsRepository.findAllByOrderByPublicationDateDesc(pageable);
+        List<Integer> newsNumber = new ArrayList<>();
+        for (int i = 0; i < news.getTotalPages(); i++) {
+            newsNumber.add(i);
+        }
+
+        model.addAttribute("news", news);
+        model.addAttribute("newsNumber", newsNumber);
+
+        return "news";
+    }
+
     @GetMapping("/review")
-    public String openAllReview(Model model, @PageableDefault(sort = {"id"}, direction = Sort.Direction.DESC) Pageable pageable) {
+    public String openReviewPage(Model model, @PageableDefault(sort = {"id"}, direction = Sort.Direction.DESC) Pageable pageable) {
         Page<Review> page;
 
         page = reviewRepository.findByVerifiedOrderByIdDesc(pageable, true);

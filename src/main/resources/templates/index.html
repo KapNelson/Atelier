@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Головна сторінка</title>
-    <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,700|Roboto:400,500&amp;subset=cyrillic"rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,700|Roboto:400,500&amp;subset=cyrillic"
+          rel="stylesheet">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/fonts.css">
     <link rel="stylesheet" href="css/jquery.fancybox.min.css">
@@ -21,8 +22,8 @@
     <div class="header__top">
         <div class="container">
             <div class="header__contacts">
-                <a class="header__phone" href="tel:380963092145">+38 (066) 023 93 36</a>
-                <a class="header__email" href="mailto:example@gmail.com">example@gmail.com</a>
+                <a class="header__phone" href="tel:380669365234">+38 (066) 936 52 34</a>
+                <a class="header__email" href="mailto:atelier.lozova@gmail.com">atelier.lozova@gmail.com</a>
                 <a id="login_link" data-fancybox data-src="#login" href="javascript:" class="header__btn">Вхід</a>
             </div>
         </div>
@@ -133,11 +134,6 @@
                     Індивідуальний підхід до кожного клієнта. Доступна ціна.
                 </div>
             </div>
-            <div class="services__btn">
-                <a href="#">
-                    Показати усі послуги
-                </a>
-            </div>
         </div>
         <div class="services__items">
             <div class="services__item">
@@ -166,9 +162,8 @@
                     </p>
                 </div>
                 <div class="services__item-btn">
-                    <a class="services__item-link" href="#">Детальніше</a>
                     <a data-fancybox data-src="#modal" href="javascript:" class="default-btn">
-                        Замовити
+                        Детальніше
                     </a>
                 </div>
             </div>
@@ -196,9 +191,8 @@
                     </p>
                 </div>
                 <div class="services__item-btn">
-                    <a class="services__item-link" href="#">Детальніше</a>
-                    <a data-fancybox data-src="#modal" href="javascript:" class="default-btn">
-                        Замовити
+                    <a href="/pillow" class="default-btn">
+                        Детальніше
                     </a>
                 </div>
             </div>
@@ -228,9 +222,8 @@
                     </p>
                 </div>
                 <div class="services__item-btn">
-                    <a class="services__item-link" href="#">Детальніше</a>
                     <a data-fancybox data-src="#modal" href="javascript:" class="default-btn">
-                        Замовити
+                        Детальніше
                     </a>
                 </div>
             </div>
@@ -279,30 +272,14 @@
                     </div>
                 </div>
             </div>
-            <a href="#" class="news__blog">
+            <div class="news__blog" th:each="el : ${news}">
                 <div class="news__images">
-                    <img src="img/news-1.jpg" alt="">
-                    <div class="news__date">03.04</div>
+                    <img src="img/news.jpg" alt="">
+                    <div class="news__date" th:text="${el.getPublicationDateInString()}"></div>
                 </div>
-                <div class="news__blog-title">
-                    Оновленний асортимент тканин
-                </div>
-                <div class="news__blog-text">
-                    «Зовсім недавно, да нас надійшли нові тканини, які мають...»
-                </div>
-            </a>
-            <a href="#" class="news__blog">
-                <div class="news__images">
-                    <img src="img/news-2.jpg" alt="">
-                    <div class="news__date">12.04</div>
-                </div>
-                <div class="news__blog-title">
-                    Зміни графіку роботи
-                </div>
-                <div class="news__blog-text">
-                    «У зв'язку з погіршенням епідеміологічної ситуації наше Ательє змінює...»
-                </div>
-            </a>
+                <div class="news__blog-title" th:text="${el.getTitle()}"></div>
+                <div class="news__blog-text" th:text="${el.getShortText()}"></div>
+            </div>
         </div>
         <div class="news__bottom">
             <div class="review__btn">
@@ -364,26 +341,25 @@
                     </div>
                 </div>
                 <div class="form__box">
-                    <form action="/addreview" method="post">
+                    <form id="review">
                         <div class="form__box-inner">
                             <div class="form__box-left">
                                 <label>
                                     ПІБ
-                                    <input type="text" name="name">
+                                    <input type="text" id="review_name" name="name">
                                 </label>
                                 <label>
                                     Контактний телефон
-                                    <input type="text" name="phone">
+                                    <input type="text" id="review_phone" name="phone">
                                 </label>
-                                <label>
-                                    <br/>
-                                    <button class="default-btn" type="submit">Залишити відгук</button>
-                                </label>
+                                <div id="message_review" class="message"></div>
+                                <button class="default-btn" type="submit">Залишити відгук</button>
                             </div>
                             <div class="form__box-right">
                                 <label>
                                     Відгук
-                                    <textarea name="text" placeholder="Обов'язково вкажіть ім'я та контактний телефон, якщо хочете, щоб ваш відгук опублікували"></textarea>
+                                    <textarea name="text" id="review_text"
+                                              placeholder="Обов'язково вкажіть справжнє ім'я та контактний телефон, якщо хочете, аби ваш відгук опублікували"></textarea>
                                 </label>
                             </div>
                         </div>
@@ -412,9 +388,11 @@
                         Неділя: вихідний<br/>
                     </div>
                     <ul class="footer__list">
-                        <li><a class="footer__phone" href="tel:380660239336">+38 (066) 023 93 36</a></li>
-                        <li><a href="#">example.email@gmail.com</a></li>
-                        <li><a class="footer__adress" href="#">Лозова, м-н 1, 21</a></li>
+                        <li><a class="footer__phone" href="tel:380669365234">+38 (066) 936 52 34</a></li>
+                        <li><a class="footer__email" href="mailto:atelier.lozova@gmail.com">atelier.lozova@gmail.com</a>
+                        </li>
+                        <li><a class="footer__adress" href="https://goo.gl/maps/g4ndmpqxzFRNGxnk9">Лозова, м-н 1, 21</a>
+                        </li>
                     </ul>
                 </div>
                 <div class="footer__map">
@@ -428,7 +406,7 @@
     <div class="footer__copy">
         <div class="container">
             <div class="copy__text">
-                © 2021 Designed by Nelson. Усі права під захистом.
+                © 2021 Designed by Ruslan Makhanov. Усі права під захистом.
             </div>
         </div>
     </div>
@@ -440,7 +418,8 @@
     <input type="submit" value="Увійти">
     <div id="message" class="message"></div>
     <div class="reg__account">
-        <a data-fancybox data-src="#registration" href="javascript:">Немає аккаунту? Зареєструватися</a>
+        <a class="reg__account-link" data-fancybox data-src="#registration" href="javascript:">Немає аккаунту?
+            Зареєструватися</a>
     </div>
 </form>
 

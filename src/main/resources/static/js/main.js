@@ -91,3 +91,37 @@ function onBodyLoad() {
         $("#login_link").fancybox().trigger('click');
     }
 }
+
+$('#review').submit(function (e) {
+    e.preventDefault();
+
+    const name = document.getElementById("review_name");
+    const phone = document.getElementById("review_phone");
+    const text = document.getElementById("review_text");
+    var message = document.getElementById("message_review");
+
+    const regexpPhone = /^(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){10,14}(\s*)?$/;
+    const regexpName = /^[А-Яа-яІіЇїЄє]*$/g;
+
+    if (!name.value || !phone.value || !text.value) {
+        message.innerHTML = "Всі поля повинні бути обов'язково заповнені!";
+    } else if (!regexpName.test(name.value)) {
+        message.innerHTML = "ПІБ повинно містити лише кирилицю!";
+    } else if (!regexpPhone.test(phone.value)) {
+        message.innerHTML = "Номер телефону має невірний формат!";
+    } else if (text.value.length > 1000) {
+        message.innerHTML = "Максимальний розмір відгуку - 1000 символів!";
+    } else {
+        $.ajax({
+            url: '/addreview',
+            type: 'post',
+            data: $('#review').serialize(),
+            success: function () {
+                message.innerHTML = "Відгук відправлений на модерацію!";
+
+            }
+        });
+    }
+});
+
+
