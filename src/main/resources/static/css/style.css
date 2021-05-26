@@ -236,7 +236,8 @@ header{
   letter-spacing: 0.1px;
 }
 .services__btn a,
-.news__btn a{
+.news__btn a,
+.review__btn a{
   color: #373636;
   line-height: 24px;
   letter-spacing: 0.25px;
@@ -559,12 +560,6 @@ header{
 .news__slider-text{
   margin-bottom: 30px;
 }
-.news__slider-author{
-  letter-spacing: 0.1px;
-  color: #212020;
-  font-weight: 500;
-  font-family: 'Roboto', sans-serif;
-}
 .news__slider-inner .slick-btn{
   top: auto;
   bottom: -110px;
@@ -581,6 +576,17 @@ header{
 }
 .news__slider-inner .slick-disabled:before{
    color: #dadada;
+}
+.news__bottom{
+
+}
+.news__btn{
+  float: right;
+  margin-top: 30px;
+}
+.review__btn{
+  float: left;
+  margin-top: 30px;
 }
 .footer__content{
   background-color: #1fa0b5;
@@ -631,7 +637,7 @@ header{
   font-family: 'Roboto', sans-serif;
   color: #000;
   font-size: 16px;
-  line-height: 16px;
+  line-height: 20px;
   margin-bottom: 20px;
   padding: 10px 0px;
 }

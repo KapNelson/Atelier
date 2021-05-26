@@ -58,11 +58,18 @@ public class Review {
         this.text = text;
     }
 
-    public boolean isVerified() {
+    public boolean getVerified() {
         return verified;
     }
 
     public void setVerified(boolean verified) {
         this.verified = verified;
+    }
+
+    public String isVerified() {
+        if(verified)
+            return "Підтверджено";
+        else
+            return "Не підтверджено";
     }
 }

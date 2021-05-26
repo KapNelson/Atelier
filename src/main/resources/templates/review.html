@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ua" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Відгуки</title>
+    <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,700|Roboto:400,500&amp;subset=cyrillic"
+          rel="stylesheet">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/jquery.formstyler.css">
+    <link rel="stylesheet" href="css/review_style.css">
+</head>
+<body>
+<header>
+    <div class="header__top">
+        <div class="container">
+            <div class="header__contacts">
+                <a class="header__phone" href="tel:380963092145">+38 (066) 023 93 36</a>
+                <a class="header__email" href="#">example@gmail.com</a>
+                <a href="/" class="header__btn">На головну</a>
+            </div>
+        </div>
+    </div>
+</header>
+
+<section id="review" class="review">
+    <div class="container">
+        <div class="review__inner">
+            <div class="services__items">
+                <div class="services__item" th:each="el : ${page}">
+                    <div class="services__title">
+                        <div class="services__image">
+                            <img src="img/review.png" alt="">
+                        </div>
+                        <div class="services__item-title" th:text="${el.getName()}"></div>
+                    </div>
+                    <div class="services__item-text" th:text="${el.getText()}"></div>
+                </div>
+            </div>
+            <nav class="pagination">
+                <ul class="page">
+                    <li class="page__item" th:each="el : ${pageNumber}">
+                        <a class="page-link" th:href="'?page=' + ${el.toString()}" th:text="${el+1}"></a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</section>
+
+</body>
+</html>

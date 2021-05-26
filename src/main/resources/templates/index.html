@@ -22,7 +22,7 @@
         <div class="container">
             <div class="header__contacts">
                 <a class="header__phone" href="tel:380963092145">+38 (066) 023 93 36</a>
-                <a class="header__email" href="#">example@gmail.com</a>
+                <a class="header__email" href="mailto:example@gmail.com">example@gmail.com</a>
                 <a id="login_link" data-fancybox data-src="#login" href="javascript:" class="header__btn">Вхід</a>
             </div>
         </div>
@@ -43,8 +43,8 @@
                         <li><a href="#slider" rel='m_PageScroll2id'>Головна</a></li>
                         <li><a href="#services" rel='m_PageScroll2id'>Послуги</a></li>
                         <li><a href="#about" rel='m_PageScroll2id'>Про нас</a></li>
-                        <li><a href="#form" rel='m_PageScroll2id'>Відгук</a></li>
-                        <li><a href="#news" rel='m_PageScroll2id'>Новини</a></li>
+                        <li><a href="#news" rel='m_PageScroll2id'>Відгуки та новини</a></li>
+                        <li><a href="#form" rel='m_PageScroll2id'>Залишити відгук</a></li>
                         <li><a href="#footer" rel='m_PageScroll2id'>Контакти</a></li>
                     </ul>
                 </nav>
@@ -258,45 +258,62 @@
     </div>
 </section>
 
-<section id="form" class="form">
+<section id="news" class="news">
     <div class="container">
-        <div class="form__inner">
-            <div class="form__content">
-                <div class="form__title-box">
-                    <div class="form__title">
-                        Залишити відгук
-                    </div>
-                    <div class="form__text">
-                        "Ательє Мод" - це безліч задоволених клієнтів та надання якісних послуг з 2009 року. Доступні
-                        ціни, зручне розташування, індивідуальний підхід до кожного клієнта.
+        <div class="news__top">
+            <div class="news__title-box">
+                <div class="news__title">
+                    Новини нашого Ательє
+                </div>
+                <div class="news__text">
+                    Дізнайся, що нового відбувається у нас. А також ти можеш ознайомитись із цікавими матеріалами.
+                </div>
+            </div>
+        </div>
+        <div class="news__inner">
+            <div class="news__slider">
+                <div class="news__slider-inner">
+                    <div class="news__slider-item" th:each="el : ${reviews}">
+                        <div class="news__slider-title" th:text="${el.getName()}"></div>
+                        <div class="news__slider-text" th:text="${el.getText()}"></div>
                     </div>
                 </div>
-                <div class="form__box">
-                    <form action="/addreview" method="post">
-                        <div class="form__box-inner">
-                            <div class="form__box-left">
-                                <label>
-                                    ПІБ
-                                    <input type="text" name="name">
-                                </label>
-                                <label>
-                                    Контактний телефон
-                                    <input type="text" name="phone">
-                                </label>
-                                <label>
-                                    <br/>
-                                <button class="default-btn" type="submit">Залишити відгук</button>
-                                </label>
-                            </div>
-                            <div class="form__box-right">
-                                <label>
-                                    Відгук
-                                    <textarea name="text"></textarea>
-                                </label>
-                            </div>
-                        </div>
-                    </form>
+            </div>
+            <a href="#" class="news__blog">
+                <div class="news__images">
+                    <img src="img/news-1.jpg" alt="">
+                    <div class="news__date">03.04</div>
                 </div>
+                <div class="news__blog-title">
+                    Оновленний асортимент тканин
+                </div>
+                <div class="news__blog-text">
+                    «Зовсім недавно, да нас надійшли нові тканини, які мають...»
+                </div>
+            </a>
+            <a href="#" class="news__blog">
+                <div class="news__images">
+                    <img src="img/news-2.jpg" alt="">
+                    <div class="news__date">12.04</div>
+                </div>
+                <div class="news__blog-title">
+                    Зміни графіку роботи
+                </div>
+                <div class="news__blog-text">
+                    «У зв'язку з погіршенням епідеміологічної ситуації наше Ательє змінює...»
+                </div>
+            </a>
+        </div>
+        <div class="news__bottom">
+            <div class="review__btn">
+                <a href="/review">
+                    Відкрити всі відгуки
+                </a>
+            </div>
+            <div class="news__btn">
+                <a href="/news">
+                    Відкрити всі новини
+                </a>
             </div>
         </div>
     </div>
@@ -333,59 +350,46 @@
     </div>
 </section>
 
-<section id="news" class="news">
+<section id="form" class="form">
     <div class="container">
-        <div class="news__top">
-            <div class="news__title-box">
-                <div class="news__title">
-                    Новини нашого Ательє
-                </div>
-                <div class="news__text">
-                    Дізнайся, що нового відбувається у нас. А також ти можеш ознайомитись із цікавими матеріалами.
-                </div>
-            </div>
-            <div class="news__btn">
-                <a href="#">
-                    Відкрити всі новини
-                </a>
-            </div>
-        </div>
-        <div class="news__inner">
-            <div class="news__slider">
-                <div class="news__slider-inner">
-                    <div class="news__slider-item" th:each="el : ${reviews}">
-                        <div class="news__slider-title">
-                            Відгук
-                        </div>
-                        <div class="news__slider-text" th:text="${el.getText()}"></div>
-                        <div class="news__slider-author" th:text="${el.getName()}"></div>
+        <div class="form__inner">
+            <div class="form__content">
+                <div class="form__title-box">
+                    <div class="form__title">
+                        Залишити відгук
+                    </div>
+                    <div class="form__text">
+                        "Ательє Мод" - це безліч задоволених клієнтів та надання якісних послуг з 2009 року. Доступні
+                        ціни, зручне розташування, індивідуальний підхід до кожного клієнта.
                     </div>
                 </div>
+                <div class="form__box">
+                    <form action="/addreview" method="post">
+                        <div class="form__box-inner">
+                            <div class="form__box-left">
+                                <label>
+                                    ПІБ
+                                    <input type="text" name="name">
+                                </label>
+                                <label>
+                                    Контактний телефон
+                                    <input type="text" name="phone">
+                                </label>
+                                <label>
+                                    <br/>
+                                    <button class="default-btn" type="submit">Залишити відгук</button>
+                                </label>
+                            </div>
+                            <div class="form__box-right">
+                                <label>
+                                    Відгук
+                                    <textarea name="text" placeholder="Обов'язково вкажіть ім'я та контактний телефон, якщо хочете, щоб ваш відгук опублікували"></textarea>
+                                </label>
+                            </div>
+                        </div>
+                    </form>
+                </div>
             </div>
-            <a href="#" class="news__blog">
-                <div class="news__images">
-                    <img src="img/news-1.jpg" alt="">
-                    <div class="news__date">03.04</div>
-                </div>
-                <div class="news__blog-title">
-                    Оновленний асортимент тканин
-                </div>
-                <div class="news__blog-text">
-                    «Зовсім недавно, да нас надійшли нові тканини, які мають...»
-                </div>
-            </a>
-            <a href="#" class="news__blog">
-                <div class="news__images">
-                    <img src="img/news-2.jpg" alt="">
-                    <div class="news__date">12.04</div>
-                </div>
-                <div class="news__blog-title">
-                    Зміни графіку роботи
-                </div>
-                <div class="news__blog-text">
-                    «У зв'язку з погіршенням епідеміологічної ситуації наше Ательє змінює...»
-                </div>
-            </a>
         </div>
     </div>
 </section>
@@ -431,8 +435,8 @@
 </footer>
 
 <form id="login">
-    <input type="text" name="username" placeholder="Логін">
-    <input type="text" name="password" placeholder="Пароль">
+    <input type="text" name="username" id="username" placeholder="Логін">
+    <input type="password" name="password" id="password" placeholder="Пароль">
     <input type="submit" value="Увійти">
     <div id="message" class="message"></div>
     <div class="reg__account">
@@ -441,9 +445,9 @@
 </form>
 
 <form id="registration">
-    <input type="text" name="login_new" placeholder="Логін">
-    <input type="text" name="password_new" placeholder="Пароль">
-    <input type="text" name="repassword_new" placeholder="Повторіть пароль">
+    <input type="text" name="login_new" id="login_new" placeholder="Логін">
+    <input type="password" name="password_new" id="password_new" placeholder="Пароль">
+    <input type="password" name="repassword_new" id="repassword_new" placeholder="Повторіть пароль">
     <input type="submit" value="Зареєструватися">
     <div id="message_reg" class="message"></div>
 </form>

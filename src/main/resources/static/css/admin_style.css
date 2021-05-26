@@ -21,13 +21,14 @@ th, td {
     padding: 10px 0px;
 }
 .form__box{
-    position: absolute;
-    left: 10%;
+
 }
 .pillow_list{
-    position: absolute;
-    left: 50%;
+
     border: 2px solid #1fa0b5;
+}
+.review__inner{
+
 }
 #add__form{
     width: 300px;

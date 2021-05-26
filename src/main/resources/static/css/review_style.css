@@ -1,0 +1,126 @@
+*{
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+    display: inline-block;
+}
+ul,
+li{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.container{
+    max-width: 1170px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+body{
+    font-family: 'PT Serif', serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    color: #5e5e5e;
+}
+header{
+    font-family: 'Roboto', sans-serif;
+}
+.header__top{
+    background-color: #1fa0b5;
+}
+.header__btn{
+    float: right;
+    line-height: 36px;
+    color: #fff;
+    background-color: #242765;
+    padding: 5px 20px 4px 20px;
+    font-size: 16px;
+    display: block;
+    position: relative;
+}
+.header__contacts:after{
+    content: "";
+    clear: both;
+    display: block;
+}
+.header__phone,
+.header__email{
+    color: #000;
+    letter-spacing: 0.25px;
+    line-height: 45px;
+    position: relative;
+}
+.header__phone{
+    padding-left: 20px;
+    padding-right: 30px;
+}
+.header__phone:before{
+    content: "\f095";
+    position: absolute;
+    left: 0;
+    color: #000;
+    font-family: "icomoon";
+}
+.header__email{
+    padding-left: 24px;
+}
+.header__email:before{
+    content: "\f003";
+    position: absolute;
+    left: 0;
+    color: #000;
+    font-family: "icomoon";
+}
+.header__content{
+    padding: 20px 0px 20px;
+}
+.header__content-inner{
+    display: flex;
+    justify-content: space-between;
+}
+.services__item{
+    background-color: #f9f9f9;
+    box-shadow: 0px 7px 24.3px 2.7px rgba(91, 89, 89, 0.14);
+    margin-top: 15px;
+}
+.services__title{
+    display: flex;
+    padding: 10px;
+}
+.services__item-title{
+    color: #212020;
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 500;
+    font-family: 'Roboto', sans-serif;
+    padding: 24px 0;
+}
+.services__item-text{
+    letter-spacing: 0.1px;
+    padding: 0px 30px 30px;
+}
+.pagination{
+    margin: 10px 0px;
+    text-align: center;
+}
+.pagination ul{
+    display: inline-block;
+}
+.pagination li {
+    float:left;
+}
+.pagination a{
+    color: #323232;
+    font-size: 16px;
+    line-height: 36px;
+    border: 1px solid transparent;
+    padding: 0px 16px;
+    transition: all .3s;
+}
+.pagination a:hover{
+    border-color: #1fa0b5;
+}
+.pagination li + li{
+    padding-left: 5px;
+}
