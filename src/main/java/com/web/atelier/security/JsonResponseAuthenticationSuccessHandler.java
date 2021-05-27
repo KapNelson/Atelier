@@ -15,14 +15,14 @@ import java.io.IOException;
 
 public class JsonResponseAuthenticationSuccessHandler implements AuthenticationSuccessHandler {
 
-    protected final Log logger = LogFactory.getLog(this.getClass());
+    private static final Log logger = LogFactory.getLog(JsonResponseAuthenticationSuccessHandler.class);
 
-    private final ObjectMapper objectMapper = new ObjectMapper();
+    private static final ObjectMapper objectMapper = new ObjectMapper();
 
     @Override
     public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response, Authentication authentication) throws ServletException, IOException {
         if (response.isCommitted()) {
-            this.logger.debug(LogMessage.format("Did not responded since response already committed."));
+            logger.debug(LogMessage.format("Did not responded since response already committed."));
         } else {
             final AuthenticationResponse authenticationResponse = new AuthenticationResponse(true, null, null);
             response.setStatus(HttpServletResponse.SC_OK);

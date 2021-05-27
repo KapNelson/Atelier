@@ -1,0 +1,22 @@
+<form id="login" th:fragment="login">
+  <input type="text" name="username" id="username" placeholder="Логін">
+  <input type="password" name="password" id="password" placeholder="Пароль">
+  <input type="submit" value="Увійти">
+  <div id="message" class="message"></div>
+  <div class="reg__account">
+    <a class="reg__account-link" data-fancybox data-src="#registration" href="javascript:">Немає аккаунту?
+      Зареєструватися</a>
+  </div>
+</form>
+
+<form id="registration" th:fragment="registration">
+  <input type="text" name="login_new" id="login_new" placeholder="Логін">
+  <input type="password" name="password_new" id="password_new" placeholder="Пароль">
+  <input type="password" name="repassword_new" id="repassword_new" placeholder="Повторіть пароль">
+  <input type="submit" value="Зареєструватися">
+  <div id="message_reg" class="message"></div>
+</form>
+
+<form id="logout" th:fragment="logout">
+  <a href="/logout">Вийти з аккаунту</a>
+</form>

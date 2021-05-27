@@ -15,15 +15,7 @@
 
 <body>
 <header class="header">
-    <div class="header__top">
-        <div class="container">
-            <div class="header__contacts">
-                <a class="header__phone" href="tel:380669365234">+38 (066) 936 52 34</a>
-                <a class="header__email" href="mailto:atelier.lozova@gmail.com">atelier.lozova@gmail.com</a>
-                <a id="login_link" data-fancybox data-src="#login" href="javascript:" class="header__btn">Вхід</a>
-            </div>
-        </div>
-    </div>
+    <div th:insert="blocks/header :: header"></div>
 </header>
 
 <section class="top">
@@ -70,14 +62,8 @@
     </div>
 </section>
 
-<footer id="footer" class="footer">
-    <div class="footer__copy">
-        <div class="container">
-            <div class="copy__text">
-                © 2021 Designed by Ruslan Makhanov. Усі права під захистом.
-            </div>
-        </div>
-    </div>
+<footer>
+    <div th:insert="blocks/footer :: footer"></div>
 </footer>
 </body>
 

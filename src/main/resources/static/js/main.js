@@ -75,7 +75,7 @@ $('#login').submit(function (e) {
             data: $('#login').serialize(),
             success: function () {
                 message.innerHTML = "Вхід успішний!";
-                window.location.href = '/';
+                window.location.reload();
             },
             statusCode: {
                 401: function () {
@@ -118,7 +118,6 @@ $('#review').submit(function (e) {
             data: $('#review').serialize(),
             success: function () {
                 message.innerHTML = "Відгук відправлений на модерацію!";
-
             }
         });
     }

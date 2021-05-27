@@ -11,16 +11,8 @@
     <link rel="stylesheet" href="css/review_style.css">
 </head>
 <body>
-<header>
-    <div class="header__top">
-        <div class="container">
-            <div class="header__contacts">
-                <a class="header__phone" href="tel:380963092145">+38 (066) 023 93 36</a>
-                <a class="header__email" href="#">example@gmail.com</a>
-                <a href="/" class="header__btn">На головну</a>
-            </div>
-        </div>
-    </div>
+<header class="header">
+    <div th:insert="blocks/header :: header"></div>
 </header>
 
 <section id="review" class="review">
@@ -47,6 +39,8 @@
         </div>
     </div>
 </section>
-
+<footer>
+    <div th:insert="blocks/footer :: footer"></div>
+</footer>
 </body>
 </html>

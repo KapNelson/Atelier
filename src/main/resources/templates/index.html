@@ -13,21 +13,14 @@
     <link rel="stylesheet" href="css/jquery.fancybox.min.css">
     <link rel="stylesheet" href="css/slick.css">
     <link rel="stylesheet" href="css/jquery.formstyler.css">
+    <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/media.css">
 </head>
 
 <body onload="onBodyLoad();">
 <header class="header">
-    <div class="header__top">
-        <div class="container">
-            <div class="header__contacts">
-                <a class="header__phone" href="tel:380669365234">+38 (066) 936 52 34</a>
-                <a class="header__email" href="mailto:atelier.lozova@gmail.com">atelier.lozova@gmail.com</a>
-                <a id="login_link" data-fancybox data-src="#login" th:attr="data-src=${logout}" href="javascript:" class="header__btn" th:text="${username}"></a>
-            </div>
-        </div>
-    </div>
+    <div th:insert="blocks/header :: header"></div>
     <div class="header__content">
         <div class="container">
             <div class="header__content-inner">
@@ -79,7 +72,7 @@
                         Не знаєте чим прикрасити свій гардероб? Можливо, у вас є улюблені речі, які втратили колишню
                         красу? Дайте своєму одягу нове життя!
                     </div>
-                    <a href="/pillow" class="slider__btn default-btn">
+                    <a href="/repair" class="slider__btn default-btn">
                         Детальніше
                     </a>
                 </div>
@@ -96,7 +89,7 @@
                         У Вас є унікальна можливість зібрати свій індивідуальний комплект постільної білизни потрібних
                         розмірів.
                     </div>
-                    <a href="/pillow" class="slider__btn default-btn">
+                    <a href="/linens" class="slider__btn default-btn">
                         Детальніше
                     </a>
                 </div>
@@ -113,7 +106,7 @@
                         вибір фурнітури на любий смак і гаманець.
                         Для клієнтів нашого Ательє постійна знижка на фурнітуру.
                     </div>
-                    <a href="/pillow" class="slider__btn default-btn">
+                    <a href="/accessories" class="slider__btn default-btn">
                         Детальніше
                     </a>
                 </div>
@@ -162,7 +155,7 @@
                     </p>
                 </div>
                 <div class="services__item-btn">
-                    <a data-fancybox data-src="#modal" href="javascript:" class="default-btn">
+                    <a href="/repair" class="default-btn">
                         Детальніше
                     </a>
                 </div>
@@ -222,7 +215,7 @@
                     </p>
                 </div>
                 <div class="services__item-btn">
-                    <a data-fancybox data-src="#modal" href="javascript:" class="default-btn">
+                    <a href="/linens" class="default-btn">
                         Детальніше
                     </a>
                 </div>
@@ -403,37 +396,12 @@
             </div>
         </div>
     </div>
-    <div class="footer__copy">
-        <div class="container">
-            <div class="copy__text">
-                © 2021 Designed by Ruslan Makhanov. Усі права під захистом.
-            </div>
-        </div>
-    </div>
+    <div th:insert="blocks/footer :: footer"></div>
 </footer>
 
-<form id="login">
-    <input type="text" name="username" id="username" placeholder="Логін">
-    <input type="password" name="password" id="password" placeholder="Пароль">
-    <input type="submit" value="Увійти">
-    <div id="message" class="message"></div>
-    <div class="reg__account">
-        <a class="reg__account-link" data-fancybox data-src="#registration" href="javascript:">Немає аккаунту?
-            Зареєструватися</a>
-    </div>
-</form>
-
-<form id="registration">
-    <input type="text" name="login_new" id="login_new" placeholder="Логін">
-    <input type="password" name="password_new" id="password_new" placeholder="Пароль">
-    <input type="password" name="repassword_new" id="repassword_new" placeholder="Повторіть пароль">
-    <input type="submit" value="Зареєструватися">
-    <div id="message_reg" class="message"></div>
-</form>
-
-<form id="logout">
-    <a href="/logout">Вийти з аккаунту</a>
-</form>
+<div th:insert="blocks/forms :: login"></div>
+<div th:insert="blocks/forms :: registration"></div>
+<div th:insert="blocks/forms :: logout"></div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="js/jquery.fancybox.min.js"></script>

@@ -5,26 +5,86 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Послуги</title>
-    <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,700|Roboto:400,500&amp;subset=cyrillic" rel="stylesheet">
+    <title>Реставрація подушок</title>
+    <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,700|Roboto:400,500&amp;subset=cyrillic"
+          rel="stylesheet">
+    <link rel="stylesheet" href="css/jquery.fancybox.min.css">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/pillow_style.css">
-    <link rel="stylesheet" href="css/media.css">
 </head>
 
 <body>
 <header class="header">
-    <div class="header__top">
-        <div class="container">
-            <div class="header__contacts">
-                <a class="header__phone" href="tel:380963092145">+38 (066) 023 93 36</a>
-                <a class="header__email" href="#">example@gmail.com</a>
-                <a href="/" class="header__btn">На головну</a>
+    <div th:insert="blocks/header :: header"></div>
+</header>
+
+<section class="services">
+    <div class="container">
+        <div class="services__top">
+            <div class="services__title-box">
+                <div class="services__title">
+                    Реставрація подушок
+                </div>
+                <div class="services__text">
+                    Індивідуальний підхід до кожного клієнта. Доступна ціна.
+                </div>
+            </div>
+            <div class="services__btn">
+                <a href="/">
+                    На головну
+                </a>
             </div>
         </div>
+        <div class="pillow__content">
+            <b>
+                Навіщо і чому потрібно чистити, реставрувати пухові ковдри, подушки?
+                Наскільки це важливо для здоров'я і як часто це робити?
+            </b>
+            <p>
+                Подушка! З нею, майже всі люди, проводять третю частину свого життя, занурюючись в сон.
+                І яким буде цей час, залежить в тому числі від подушки, її якості і чистоти!
+                Не завжди, людина занурюється в сон, прийнявши душ і помивши голову.
+                Міняти наволочки щодня - це пріоритет готелів і поїздів.
+                Але пил і різні частки життєдіяльності людини все одно проникають в подушку.
+            </p>
+            <p>
+                Подушки і ковдри - місця, де у великих кількостях живуть паразити, шкідливі для людини.
+                Зі зміною клімату їх з'являється все більша кількість, що негативно позначається на людському
+                самопочутті.
+                Зміст наших подушок і ковдр, - пір'я, пух - після закінчення певного часу втрачають свій первозданний
+                вигляд і втрачають свої властивості, розсипаючись на порох.
+                Після того, як труха висипається з напірника, вона перетворюється на шкідливий алерген, що може привести
+                до захворювань дихальних шляхів у людей.
+            </p>
+            <p>
+                Реставрація подушок відновить властивості наповнювача, збільшить їх термін експлуатації, і звичайно ж,
+                заощадить ваші гроші.
+                У результаті, ви отримуєте нову м'яку подушку за 10-20 хвилин.
+            </p>
+            <p>
+                Чистка та реставрація подушок та ковдр відбувається наступним чином:
+            <ol>
+                <li>наповнювач вашої подушки потрапляє в спеціальну установку, де відбувається його чистка і сушка;</li>
+                <li>далі реставрація подушок супроводжується дезінфекцією їх вмісту (за допомогою потужного потоку ультрафіолетових променів з пуху видаляються кліщі та інші шкідливі організми);</li>
+                <li>потім пух проходить через спеціальний фільтр, в якому затримуються ворс, сміття та інші сторонні предмети;</li>
+                <li>в результаті чистий пух потрапляє в новий напірник, і ви отримуєте абсолютно нову подушку і ковдру.</li>
+            </ol>
+            </p>
+            <p>
+                Наше Ательє зробить якісну і недорогу реставрацію і чистку Ваших подушок - і Ваш відпочинок стане комфортним і приємним.
+                Чисті подушки, прекрасне постільне, відреставровані ковдри, перини - це те, чим компанія займається не один рік.
+                Солодкий і здоровий сон - це класно!
+            </p>
+            <p>
+                <b>
+                    І, повірте, що фахівці Ателье зробдять все можливе, щоб Ви залишилися задоволені!
+                </b>
+            </p>
+        </div>
     </div>
-</header>
+</section>
 
 <section id="services" class="services">
     <div class="container">
@@ -46,7 +106,8 @@
         <div class="services__items" th:each="el : ${pillows}">
             <div class="services__item">
                 <img src="img/pillow.png" alt="">
-                <div class="services__item-title" th:text="${el.getHeight()} + 'x' + ${el.getWidth()} + ' - ' + ${el.getPrice()} + ' грн.'"></div>
+                <div class="services__item-title"
+                     th:text="${el.getHeight()} + 'x' + ${el.getWidth()} + ' - ' + ${el.getPrice()} + ' грн.'"></div>
                 <div class="services__item-btn">
                     <a class="services__item-link" href="#">Детальніше</a>
                     <a class="default-btn" href="#">
@@ -58,16 +119,17 @@
     </div>
 </section>
 
-<footer id="footer" class="footer">
-    <div class="footer__copy">
-        <div class="container">
-            <div class="copy__text">
-                © 2021 Designed by Ruslan Makhanov. Усі права під захистом.
-            </div>
-        </div>
-    </div>
+<footer>
+    <div th:insert="blocks/footer :: footer"></div>
 </footer>
-
 </body>
+
+<div th:insert="blocks/forms :: login"></div>
+<div th:insert="blocks/forms :: registration"></div>
+<div th:insert="blocks/forms :: logout"></div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="js/jquery.fancybox.min.js"></script>
+<script src="js/main.js"></script>
 
 </html>

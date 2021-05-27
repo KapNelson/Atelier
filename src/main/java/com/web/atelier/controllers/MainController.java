@@ -41,21 +41,25 @@ public class MainController {
     @Autowired
     private NewsRepository newsRepository;
 
-    @GetMapping("/")
-    public String goToMainPage(Model model) {
+    private void setUsernameAndLogstatus(Model model) {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         String username = new String("Вхід");
-        String logout = new String("#login");
+        String logstatus = new String("#login");
 
         if(auth.isAuthenticated()) {
             if(!auth.getName().equals("anonymousUser")) {
                 username = "Привіт, " + auth.getName();
-                logout = "#logout";
+                logstatus = "#logout";
             }
         }
 
         model.addAttribute("username", username);
-        model.addAttribute("logout", logout);
+        model.addAttribute("logstatus", logstatus);
+    }
+
+    @GetMapping("/")
+    public String goToMainPage(Model model) {
+        setUsernameAndLogstatus(model);
 
         Iterable<Review> reviews = reviewRepository.findTop3ByVerifiedOrderByIdDesc(true);
         model.addAttribute("reviews", reviews);
@@ -75,13 +79,38 @@ public class MainController {
 
     @GetMapping("/pillow")
     public String openPillowPage(Model model) {
+        setUsernameAndLogstatus(model);
+
         Iterable<Pillow> pillows = pillowRepository.findAll();
         model.addAttribute("pillows", pillows);
         return "pillow";
     }
 
+    @GetMapping("/repair")
+    public String openRepairPage(Model model) {
+        setUsernameAndLogstatus(model);
+
+        return "repair";
+    }
+
+    @GetMapping("/linens")
+    public String openLinensPage(Model model) {
+        setUsernameAndLogstatus(model);
+
+        return "linens";
+    }
+
+    @GetMapping("/accessories")
+    public String openAccessoriesPage(Model model) {
+        setUsernameAndLogstatus(model);
+
+        return "accessories";
+    }
+
     @GetMapping("/news")
     public String openNewsPage(Model model, @PageableDefault(sort = {"id"}, direction = Sort.Direction.DESC) Pageable pageable) {
+        setUsernameAndLogstatus(model);
+
         Page<News> news;
 
         news = newsRepository.findAllByOrderByPublicationDateDesc(pageable);
@@ -98,6 +127,8 @@ public class MainController {
 
     @GetMapping("/review")
     public String openReviewPage(Model model, @PageableDefault(sort = {"id"}, direction = Sort.Direction.DESC) Pageable pageable) {
+        setUsernameAndLogstatus(model);
+
         Page<Review> page;
 
         page = reviewRepository.findByVerifiedOrderByIdDesc(pageable, true);
