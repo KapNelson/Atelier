@@ -1,10 +1,57 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ua" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Управління користувачами</title>
+    <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,700|Roboto:400,500&amp;subset=cyrillic"
+          rel="stylesheet">
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/fonts.css">
+    <link rel="stylesheet" href="/css/admin_style.css">
 </head>
 <body>
+
+<section class="header">
+    <div class="container">
+        <div class="header__top">
+            <div class="header__title-box">
+                <div class="header__title">
+                    Управління користувачами
+                </div>
+            </div>
+            <div class="header__btn">
+                <a href="/admin">
+                    Панель адміністратора
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="content">
+    <div class="container">
+        <div class="list">
+            <table style="width:100%">
+                <tr>
+                    <th>Логін</th>
+                    <th>Роль</th>
+                    <th>Статус</th>
+                    <th>Управління</th>
+                </tr>
+                <form th:each="el : ${users}" action="/ban_user" method="post">
+                    <tr>
+                        <td><input type="text" name="login" th:value="${el.getLogin()}" readonly></td>
+                        <td th:text="${el.getRole()}"></td>
+                        <td th:text="${el.isEnabled()}"></td>
+                        <td>
+                            <input class="submit" type="submit" th:value="${el.banUser()}">
+                        </td>
+                    </tr>
+                </form>
+            </table>
+        </div>
+    </div>
+</section>
 
 </body>
 </html>

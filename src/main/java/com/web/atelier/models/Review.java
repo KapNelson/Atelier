@@ -1,6 +1,5 @@
 package com.web.atelier.models;
 
-import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -35,5 +34,12 @@ public class Review {
             return "Підтверджено";
         else
             return "Не підтверджено";
+    }
+
+    public String confirmReview() {
+        if(verified)
+            return "Заблокувати";
+        else
+            return "Підтвердити";
     }
 }

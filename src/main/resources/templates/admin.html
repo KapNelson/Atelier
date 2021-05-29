@@ -5,18 +5,35 @@
     <title>Панель адміністратора</title>
     <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,700|Roboto:400,500&amp;subset=cyrillic"
           rel="stylesheet">
+    <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/fonts.css">
     <link rel="stylesheet" href="css/admin_style.css">
 </head>
 <body>
 
-<header>
-    <div class="header__content">
+<section class="header">
+    <div class="container">
+        <div class="header__top">
+            <div class="header__title-box">
+                <div class="header__title">
+                    Панель адміністратора
+                </div>
+            </div>
+            <div class="header__btn">
+                <a href="/">
+                    На головну
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="menu__admin">
+    <div class="menu__admin-content">
         <div class="container">
-            <div class="header__content-inner">
+            <div class="menu__admin-inner">
                 <nav class="menu">
                     <ul>
-                        <li><a href="/">На головну</a></li>
                         <li><a href="/admin/manage_pillow">Управління подушками</a></li>
                         <li><a href="/admin/manage_review">Управління відгуками</a></li>
                         <li><a href="/admin/manage_news">Управління новинами</a></li>
@@ -26,7 +43,7 @@
             </div>
         </div>
     </div>
-</header>
+</section>
 
 </body>
 </html>

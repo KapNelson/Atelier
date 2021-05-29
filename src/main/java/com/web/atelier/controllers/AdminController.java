@@ -1,9 +1,13 @@
 package com.web.atelier.controllers;
 
+import com.web.atelier.models.News;
 import com.web.atelier.models.Pillow;
 import com.web.atelier.models.Review;
+import com.web.atelier.models.User;
+import com.web.atelier.repo.NewsRepository;
 import com.web.atelier.repo.PillowRepository;
 import com.web.atelier.repo.ReviewRepository;
+import com.web.atelier.repo.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -17,13 +21,19 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
+import java.time.LocalDate;
 
 @Controller
 public class AdminController {
     @Autowired
+    private UserRepository userRepository;
+    @Autowired
     private PillowRepository pillowRepository;
     @Autowired
     private ReviewRepository reviewRepository;
+    @Autowired
+    private NewsRepository newsRepository;
 
     @GetMapping("/admin")
     public String goToAdminPage(Model model) {
@@ -54,12 +64,26 @@ public class AdminController {
     }
 
     @GetMapping("/admin/manage_news")
-    public String goToManageNewsPage(Model model) {
+    public String goToManageNewsPage(Model model, @PageableDefault(sort = {"id"}, direction = Sort.Direction.DESC) Pageable pageable) {
+        Page<News> news;
+
+        news = newsRepository.findAllByOrderByPublicationDateDesc(pageable);
+        List<Integer> newsNumber = new ArrayList<>();
+        for (int i = 0; i < news.getTotalPages(); i++) {
+            newsNumber.add(i);
+        }
+
+        model.addAttribute("news", news);
+        model.addAttribute("newsNumber", newsNumber);
+
         return "manage_news";
     }
 
     @GetMapping("/admin/manage_user")
     public String goToManageUserPage(Model model) {
+        Iterable<User> users = userRepository.findAll();
+        model.addAttribute("users", users);
+
         return "manage_user";
     }
 
@@ -67,12 +91,41 @@ public class AdminController {
     public String addNewPillow(@RequestParam Integer width, @RequestParam Integer height, @RequestParam Float price, Model model) {
         Pillow pillow = new Pillow(width, height, price);
         pillowRepository.save(pillow);
-        return "redirect:admin";
+        return "redirect:admin/manage_pillow";
     }
 
     @PostMapping("/delete_pillow")
     public String deletePillow(@RequestParam Integer id, Model model) {
         pillowRepository.deleteById(id);
-        return "redirect:admin";
+        return "redirect:admin/manage_pillow";
+    }
+
+    @PostMapping("/ban_user")
+    public String banUser(@RequestParam String login, Model model) {
+        Optional<User> user = userRepository.findById(login);
+        user.get().setEnabled(!user.get().getEnabled());
+        userRepository.save(user.get());
+        return "redirect:admin/manage_user";
+    }
+
+    @PostMapping("/confirm_review")
+    public String confirmReview(@RequestParam Long id, Model model) {
+        Optional<Review> review = reviewRepository.findById(id);
+        review.get().setVerified(!review.get().getVerified());
+        reviewRepository.save(review.get());
+        return "redirect:admin/manage_review";
+    }
+
+    @PostMapping("/add_news")
+    public String addNewNews(@RequestParam String title, @RequestParam String text, Model model) {
+        News news = new News(title, text, LocalDate.now());
+        newsRepository.save(news);
+        return "redirect:admin/manage_news";
+    }
+
+    @PostMapping("/delete_news")
+    public String deleteNews(@RequestParam Long id, Model model) {
+        newsRepository.deleteById(id);
+        return "redirect:admin/manage_news";
     }
 }

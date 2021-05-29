@@ -24,4 +24,18 @@ public class User {
         this.role = role;
         this.enabled = enabled;
     }
+
+    public String isEnabled() {
+        if(enabled)
+            return "Активний";
+        else
+            return "Не активний";
+    }
+
+    public String banUser() {
+        if(enabled)
+            return "Заблокувати";
+        else
+            return "Розблокувати";
+    }
 }

@@ -45,16 +45,18 @@
     border: 3px solid #1fa0b5;
 }
 
-.review__item{
+.review__item {
     background-color: #f9f9f9;
     box-shadow: 0px 7px 24.3px 2.7px rgba(91, 89, 89, 0.14);
     margin-top: 15px;
 }
-.review__title{
+
+.review__title {
     display: flex;
     padding: 10px;
 }
-.review__item-title{
+
+.review__item-title {
     color: #212020;
     font-size: 18px;
     line-height: 24px;
@@ -62,21 +64,26 @@
     font-family: 'Roboto', sans-serif;
     padding: 24px 0;
 }
-.review__item-text{
+
+.review__item-text {
     letter-spacing: 0.1px;
     padding: 0px 30px 30px;
 }
-.pagination{
+
+.pagination {
     margin: 10px 0px;
     text-align: center;
 }
-.pagination ul{
+
+.pagination ul {
     display: inline-block;
 }
+
 .pagination li {
-    float:left;
+    float: left;
 }
-.pagination a{
+
+.pagination a {
     color: #323232;
     font-size: 16px;
     line-height: 36px;
@@ -84,9 +91,11 @@
     padding: 0px 16px;
     transition: all .3s;
 }
-.pagination a:hover{
+
+.pagination a:hover {
     border-color: #1fa0b5;
 }
-.pagination li + li{
+
+.pagination li + li {
     padding-left: 5px;
 }

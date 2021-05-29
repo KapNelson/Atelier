@@ -1,10 +1,78 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ua" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Управління новинами</title>
+    <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,700|Roboto:400,500&amp;subset=cyrillic"
+          rel="stylesheet">
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/fonts.css">
+    <link rel="stylesheet" href="/css/admin_style.css">
 </head>
 <body>
+
+<section class="header">
+    <div class="container">
+        <div class="header__top">
+            <div class="header__title-box">
+                <div class="header__title">
+                    Управління новинами
+                </div>
+            </div>
+            <div class="header__btn">
+                <a href="/admin">
+                    Панель адміністратора
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="content">
+    <div class="container">
+        <div class="form__box">
+            <form id="add__form" class="form" action="/add_news" method="post">
+                <label>Заголовок
+                    <input type="text" name="title" placeholder="Заголовок">
+                </label>
+                <label> Новина
+                    <textarea name="text"></textarea>
+                </label>
+                <input type="submit" value="Опублікувати">
+            </form>
+            <form id="delete__form" class="form" action="/delete_news" method="post">
+                <label>Введіть номер:
+                    <input type="text" name="id" placeholder="Номер">
+                </label>
+                <input type="submit" value="Видалити">
+            </form>
+        </div>
+    </div>
+</section>
+
+<section class="news">
+    <div class="container">
+        <div class="news__inner">
+            <div class="news__items">
+                <div class="news__item" th:each="el : ${news}">
+                    <div class="news__title">
+                        <div class="news__date" th:text="${el.getPublicationDateInString()}"></div>
+                        <div class="news__item-id" th:text="${'Новина №' + el.getId()}"></div>
+                    </div>
+                    <div class="news__item-title" th:text="${el.getTitle()}"></div>
+                    <div class="news__item-text" th:utext="${el.getTextWithIndentation()}"></div>
+                </div>
+            </div>
+            <nav class="pagination">
+                <ul class="page">
+                    <li class="page__item" th:each="el : ${newsNumber}">
+                        <a class="page-link" th:href="'?page=' + ${el.toString()}" th:text="${el+1}"></a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</section>
 
 </body>
 </html>

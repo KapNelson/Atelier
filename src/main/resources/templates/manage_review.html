@@ -2,39 +2,59 @@
 <html lang="ua" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Панель адміністратора</title>
+    <title>Управління відгуками</title>
     <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,700|Roboto:400,500&amp;subset=cyrillic"
           rel="stylesheet">
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/fonts.css">
-    <link rel="stylesheet" href="css/admin_style.css">
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/fonts.css">
+    <link rel="stylesheet" href="/css/admin_style.css">
 </head>
 <body>
 
-<section id="review" class="review">
+<section class="header">
     <div class="container">
-        <div class="review__content">
-            <div class="review_list">
-                <table style="width:100%">
-                    <tr>
-                        <th>Номер</th>
-                        <th>Ім'я</th>
-                        <th>Телефон</th>
-                        <th>Відгук</th>
-                        <th>Статус</th>
-                    </tr>
-                    <tr th:each="el : ${page}">
-                        <td th:text="${el.getId()}"></td>
-                        <td th:text="${el.getName()}"></td>
-                        <td th:text="${el.getPhone()}"></td>
-                        <td th:text="${el.getText()}"></td>
-                        <td th:text="${el.isVerified()}"></td>
-                    </tr>
-                </table>
+        <div class="header__top">
+            <div class="header__title-box">
+                <div class="header__title">
+                    Управління відгуками
+                </div>
             </div>
-            <nav aria-label="Page navigation example">
-                <ul class="pagination justify-content-center">
-                    <li class="page-item" th:each="el : ${pageNumber}">
+            <div class="header__btn">
+                <a href="/admin">
+                    Панель адміністратора
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="review">
+    <div class="container">
+        <div class="review__inner">
+            <div class="review__items">
+                <form th:each="el : ${page}" action="/confirm_review" method="post">
+                    <div class="review__item">
+                        <div class="review__title">
+                            <div class="review__image">
+                                <img src="/img/review.png" alt="">
+                            </div>
+                            <div class="review__item-title"> Відгук №
+                                <input type="text" name="id" class = "id" th:value="${el.getId()}" readonly>
+                            </div>
+                        </div>
+                        <div class="review__content">
+                            <div class="review__content-item" th:text="${el.getName()}"></div>
+                            <div class="review__content-item" th:text="${el.getPhone()}"></div>
+                            <div class="review__content-item" th:text="'Статус: ' + ${el.isVerified()}"></div>
+                        </div>
+                        <div class="review__item-text" th:text="${el.getText()}"></div>
+                        <div><input class="submit" type="submit" th:value="${el.confirmReview()}"></div>
+                    </div>
+                </form>
+            </div>
+            <nav class="pagination">
+                <ul class="page">
+                    <li class="page__item" th:each="el : ${pageNumber}">
                         <a class="page-link" th:href="'?page=' + ${el.toString()}" th:text="${el+1}"></a>
                     </li>
                 </ul>
