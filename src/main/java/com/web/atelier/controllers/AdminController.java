@@ -26,23 +26,44 @@ public class AdminController {
     private ReviewRepository reviewRepository;
 
     @GetMapping("/admin")
-    public String goToAdminPage(Model model, @PageableDefault(sort = {"id"}, direction = Sort.Direction.DESC) Pageable pageable) {
+    public String goToAdminPage(Model model) {
+        return "admin";
+    }
+
+    @GetMapping("/admin/manage_pillow")
+    public String goToManagePillowPage(Model model) {
         Iterable<Pillow> pillows = pillowRepository.findAll();
         model.addAttribute("pillows", pillows);
 
+        return "manage_pillow";
+    }
+
+    @GetMapping("/admin/manage_review")
+    public String goToManageReviewPage(Model model, @PageableDefault(sort = {"id"}, direction = Sort.Direction.DESC) Pageable pageable) {
         Page<Review> page;
 
         page = reviewRepository.findAllByOrderByIdDesc(pageable);
         List<Integer> pageNumber = new ArrayList<>();
-        for(int i = 0; i<page.getTotalPages(); i++){
+        for (int i = 0; i < page.getTotalPages(); i++) {
             pageNumber.add(i);
         }
         model.addAttribute("page", page);
         model.addAttribute("pageNumber", pageNumber);
-        return "admin";
+
+        return "manage_review";
     }
 
-    @PostMapping("/admin")
+    @GetMapping("/admin/manage_news")
+    public String goToManageNewsPage(Model model) {
+        return "manage_news";
+    }
+
+    @GetMapping("/admin/manage_user")
+    public String goToManageUserPage(Model model) {
+        return "manage_user";
+    }
+
+    @PostMapping("/add_pillow")
     public String addNewPillow(@RequestParam Integer width, @RequestParam Integer height, @RequestParam Float price, Model model) {
         Pillow pillow = new Pillow(width, height, price);
         pillowRepository.save(pillow);

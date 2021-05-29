@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ua" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Управління подушками</title>
+    <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,700|Roboto:400,500&amp;subset=cyrillic"
+          rel="stylesheet">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/admin_style.css">
+</head>
+<body>
+
+<section id="pillow" class="pillow">
+    <div class="container">
+        <div class="pillow__content">
+            <div class="form__box">
+                <form id="add__form" action="/add_pillow" method="post">
+                    <label>Ширина
+                        <input type="text" name="width" placeholder="Ширина">
+                    </label>
+                    <label>Висота
+                        <input type="text" name="height" placeholder="Висота">
+                    </label>
+                    <label>Ціна
+                        <input type="text" name="price" placeholder="Ціна">
+                    </label>
+                    <input type="submit" value="Додати">
+                </form>
+                <form id="edit__form" action="/delete_pillow" method="post">
+                    <label>Введіть номер:
+                        <input type="text" name="id" placeholder="Номер">
+                    </label>
+                    <input type="submit" value="Видалити">
+                </form>
+            </div>
+            <div class="pillow_list">
+                <table style="width:100%">
+                    <tr>
+                        <th>Номер</th>
+                        <th>Висота</th>
+                        <th>Ширина</th>
+                        <th>Ціна</th>
+                    </tr>
+                    <tr th:each="el : ${pillows}">
+                        <td th:text="${el.getId()}"></td>
+                        <td th:text="${el.getHeight()}"></td>
+                        <td th:text="${el.getWidth()}"></td>
+                        <td th:text="${el.getPrice()}"></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
+
+</body>
+</html>

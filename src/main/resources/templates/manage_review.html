@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ua" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Панель адміністратора</title>
+    <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,700|Roboto:400,500&amp;subset=cyrillic"
+          rel="stylesheet">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/admin_style.css">
+</head>
+<body>
+
+<section id="review" class="review">
+    <div class="container">
+        <div class="review__content">
+            <div class="review_list">
+                <table style="width:100%">
+                    <tr>
+                        <th>Номер</th>
+                        <th>Ім'я</th>
+                        <th>Телефон</th>
+                        <th>Відгук</th>
+                        <th>Статус</th>
+                    </tr>
+                    <tr th:each="el : ${page}">
+                        <td th:text="${el.getId()}"></td>
+                        <td th:text="${el.getName()}"></td>
+                        <td th:text="${el.getPhone()}"></td>
+                        <td th:text="${el.getText()}"></td>
+                        <td th:text="${el.isVerified()}"></td>
+                    </tr>
+                </table>
+            </div>
+            <nav aria-label="Page navigation example">
+                <ul class="pagination justify-content-center">
+                    <li class="page-item" th:each="el : ${pageNumber}">
+                        <a class="page-link" th:href="'?page=' + ${el.toString()}" th:text="${el+1}"></a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</section>
+
+</body>
+</html>
