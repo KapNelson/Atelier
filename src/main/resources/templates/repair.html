@@ -1,16 +1,89 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ua">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Ремонт одягу</title>
+    <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,700|Roboto:400,500&amp;subset=cyrillic"
+          rel="stylesheet">
+    <link rel="stylesheet" href="css/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/services_style.css">
 </head>
 <body>
 <header class="header">
     <div th:insert="blocks/header :: header"></div>
 </header>
 
+<section class="about">
+<div class="container">
+    <div class="about__top">
+        <div class="about__title-box">
+            <div class="about__title">
+                Пошив та ремонт одягу
+            </div>
+            <div class="about__text">
+                До нас ви можете звернутися з будь-якою неприємністю, яка змушує вас не діставати той чи інший предмет
+                гардероба з шафи.
+            </div>
+        </div>
+        <div class="about__btn">
+            <a href="/">
+                На головну
+            </a>
+        </div>
+    </div>
+    <div class="about__content">
+        <p>
+            Виконуємо підгонку одягу по фігурі: укорочення довжини одягу, збільшення чи зменшення розміру,
+            а також повну зміну фасону. Підігнати можна будь-який виріб: від нижньої білизни до шуб.
+            При роботі з джинсовими виробами повністю зберігається оригінальний стиль обробки краю одягу.
+        </p>
+        <p>
+            Ми пропонуємо наступні послуги з ремонту одягу:
+        <ul>
+            <li>
+                Усунення пошкоджень різної складності (розриви, потертості, пропалені праскою або сигаретою місця,
+                пошкоджені міллю фрагменти, банальні затяжки і спущені петлі на трикотажі) методами вплетення, штуковки,
+                художньоого штопання, аплікації, вишивки (в тому числі бісером та стразами).
+            </li>
+            <li>Заміна підкладки, гумок, манжетів, блискавок і іншої фурнітури.</li>
+            <li>Укорочення, подовження низу виробів.</li>
+            <li>Перешиття одягу зі зміною фасону і без змін.</li>
+            <li>Заміна деталей у виробах.</li>
+            <li>Виготовлення кишень.</li>
+            <li>Оновлення одягу.</li>
+            <li>Прасування одягу професійним відпарювачем.</li>
+            <li>Інші послуги з дрібного ремонту одягу.</li>
+            <li>Швейну фурнітура для довершеного вигляду ваших речей (гудзики, блискавки, мереживо, нитки, голки, інші
+                швейні деталі)
+            </li>
+        </ul>
+        </p>
+        <p>
+            Ательє виконує <b>терміновий ремонт одягу</b> (в терміни від 1 години): пришити латочку, ремонт коміра,
+            заштопати джинси або куртку. Якщо з вашим одягом трапилася неприємність, а вона вам потрібна прямо сьогодні
+            - приїжджайте до нас, і ми зробимо ремонт одягу терміново, і Вам не доведеться змінювати свої плани.
+        </p>
+    </div>
+</div>
+</section>
+
 <footer>
     <div th:insert="blocks/footer :: footer"></div>
 </footer>
+
+<div th:insert="blocks/forms :: login"></div>
+<div th:insert="blocks/forms :: registration"></div>
+<div th:insert="blocks/forms :: logout"></div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="js/jquery.fancybox.min.js"></script>
+<script src="js/main.js"></script>
+
 </body>
+
 </html>

@@ -1,20 +1,22 @@
-.top {
-    padding: 50px 0px 0px;
+.about,
+.products {
+    font-family: 'Roboto', sans-serif;
+    padding: 50px 0px 30px;
 }
 
-.top__content {
+.about__top {
     display: flex;
     justify-content: space-between;
     margin-bottom: 60px;
 }
 
-.top__title-box {
+.about__title-box {
     max-width: 520px;
     padding-left: 140px;
     position: relative;
 }
 
-.top__title-box:before {
+.about__title-box:before {
     content: "";
     position: absolute;
     width: 100px;
@@ -24,7 +26,7 @@
     top: 11px;
 }
 
-.top__title {
+.about__title {
     font-size: 24px;
     font-weight: 500;
     line-height: 24px;
@@ -33,11 +35,12 @@
     margin-bottom: 10px;
 }
 
-.top__text {
+.about__text {
     letter-spacing: 0.1px;
+    font-family: 'Roboto', sans-serif;
 }
 
-.top__btn a {
+.about__btn a {
     color: #373636;
     line-height: 24px;
     letter-spacing: 0.25px;
@@ -45,16 +48,23 @@
     border: 3px solid #1fa0b5;
 }
 
-.review__item{
+.about__content li {
+    list-style-type: disc;
+    list-style-position: inside;
+}
+
+.products__item {
+    display: inline-table;
+    width: 357px;
+    margin: 10px;
+    text-align: center;
+    padding: 30px 0px 80px;
+    position: relative;
     background-color: #f9f9f9;
     box-shadow: 0px 7px 24.3px 2.7px rgba(91, 89, 89, 0.14);
-    margin-top: 15px;
 }
-.review__title{
-    display: flex;
-    padding: 10px;
-}
-.review__item-title{
+
+.products__item-title {
     color: #212020;
     font-size: 18px;
     line-height: 24px;
@@ -62,31 +72,15 @@
     font-family: 'Roboto', sans-serif;
     padding: 24px 0;
 }
-.review__item-text{
+
+.products__item-text {
     letter-spacing: 0.1px;
     padding: 0px 30px 30px;
 }
-.pagination{
-    margin: 10px 0px;
-    text-align: center;
+
+.about__content {
+    font-size: 18px;
+    letter-spacing: 0.1px;
+    font-family: 'Roboto', sans-serif;
 }
-.pagination ul{
-    display: inline-block;
-}
-.pagination li {
-    float:left;
-}
-.pagination a{
-    color: #323232;
-    font-size: 16px;
-    line-height: 36px;
-    border: 1px solid transparent;
-    padding: 0px 16px;
-    transition: all .3s;
-}
-.pagination a:hover{
-    border-color: #1fa0b5;
-}
-.pagination li + li{
-    padding-left: 5px;
-}
+

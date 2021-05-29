@@ -8,9 +8,11 @@
     <title>Новини</title>
     <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,700|Roboto:400,500&amp;subset=cyrillic"
           rel="stylesheet">
+    <link rel="stylesheet" href="css/jquery.fancybox.min.css">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/fonts.css">
     <link rel="stylesheet" href="css/news_style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
@@ -20,16 +22,17 @@
 
 <section class="top">
     <div class="container">
-        <div class="services__top">
-            <div class="services__title-box">
-                <div class="services__title">
+        <div class="top__content">
+            <div class="top__title-box">
+                <div class="top__title">
                     Наші новини
                 </div>
-                <div class="services__text">
-                    Переглядай актуальну інформацію про зміни у житті ательє. Читай різноманітні новини та цікаві статті.
+                <div class="top__text">
+                    Переглядай актуальну інформацію про зміни у житті ательє.
+                    <br>Читай різноманітні новини та цікаві статті.
                 </div>
             </div>
-            <div class="services__btn">
+            <div class="top__btn">
                 <a href="/">
                     На головну
                 </a>
@@ -40,15 +43,15 @@
 
 <section class="news">
     <div class="container">
-        <div class="review__inner">
-            <div class="services__items">
-                <div class="services__item" th:each="el : ${news}">
+        <div class="news__inner">
+            <div class="news__items">
+                <div class="news__item" th:each="el : ${news}">
                     <div class="news__title">
                         <div class="news__date" th:text="${el.getPublicationDateInString()}"></div>
 
-                        <div class="services__item-title" th:text="${el.getTitle()}"></div>
+                        <div class="news__item-title" th:text="${el.getTitle()}"></div>
                     </div>
-                    <div class="services__item-text" th:utext="${el.getTextWithIndentation()}"></div>
+                    <div class="news__item-text" th:utext="${el.getTextWithIndentation()}"></div>
                 </div>
             </div>
             <nav class="pagination">
@@ -65,6 +68,15 @@
 <footer>
     <div th:insert="blocks/footer :: footer"></div>
 </footer>
+
+<div th:insert="blocks/forms :: login"></div>
+<div th:insert="blocks/forms :: registration"></div>
+<div th:insert="blocks/forms :: logout"></div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="js/jquery.fancybox.min.js"></script>
+<script src="js/main.js"></script>
+
 </body>
 
 </html>

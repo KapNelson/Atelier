@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/fonts.css">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/pillow_style.css">
+    <link rel="stylesheet" href="css/services_style.css">
 </head>
 
 <body>
@@ -20,28 +20,25 @@
     <div th:insert="blocks/header :: header"></div>
 </header>
 
-<section class="services">
+<section class="about">
     <div class="container">
-        <div class="services__top">
-            <div class="services__title-box">
-                <div class="services__title">
+        <div class="about__top">
+            <div class="about__title-box">
+                <div class="about__title">
                     Реставрація подушок
                 </div>
-                <div class="services__text">
-                    Індивідуальний підхід до кожного клієнта. Доступна ціна.
+                <div class="about__text">
+                    Навіщо і чому потрібно чистити, реставрувати пухові ковдри, подушки?
+                    Наскільки це важливо для здоров'я і як часто це робити?
                 </div>
             </div>
-            <div class="services__btn">
+            <div class="about__btn">
                 <a href="/">
                     На головну
                 </a>
             </div>
         </div>
-        <div class="pillow__content">
-            <b>
-                Навіщо і чому потрібно чистити, реставрувати пухові ковдри, подушки?
-                Наскільки це важливо для здоров'я і як часто це робити?
-            </b>
+        <div class="about__content">
             <p>
                 Подушка! З нею, майже всі люди, проводять третю частину свого життя, занурюючись в сон.
                 І яким буде цей час, залежить в тому числі від подушки, її якості і чистоти!
@@ -65,16 +62,24 @@
             </p>
             <p>
                 Чистка та реставрація подушок та ковдр відбувається наступним чином:
-            <ol>
+            <ul>
                 <li>наповнювач вашої подушки потрапляє в спеціальну установку, де відбувається його чистка і сушка;</li>
-                <li>далі реставрація подушок супроводжується дезінфекцією їх вмісту (за допомогою потужного потоку ультрафіолетових променів з пуху видаляються кліщі та інші шкідливі організми);</li>
-                <li>потім пух проходить через спеціальний фільтр, в якому затримуються ворс, сміття та інші сторонні предмети;</li>
-                <li>в результаті чистий пух потрапляє в новий напірник, і ви отримуєте абсолютно нову подушку і ковдру.</li>
-            </ol>
+                <li>далі реставрація подушок супроводжується дезінфекцією їх вмісту (за допомогою потужного потоку
+                    ультрафіолетових променів з пуху видаляються кліщі та інші шкідливі організми);
+                </li>
+                <li>потім пух проходить через спеціальний фільтр, в якому затримуються ворс, сміття та інші сторонні
+                    предмети;
+                </li>
+                <li>в результаті чистий пух потрапляє в новий напірник, і ви отримуєте абсолютно нову подушку і
+                    ковдру.
+                </li>
+            </ul>
             </p>
             <p>
-                Наше Ательє зробить якісну і недорогу реставрацію і чистку Ваших подушок - і Ваш відпочинок стане комфортним і приємним.
-                Чисті подушки, прекрасне постільне, відреставровані ковдри, перини - це те, чим компанія займається не один рік.
+                Наше Ательє зробить якісну і недорогу реставрацію і чистку Ваших подушок - і Ваш відпочинок стане
+                комфортним і приємним.
+                Чисті подушки, прекрасне постільне, відреставровані ковдри, перини - це те, чим компанія займається не
+                один рік.
                 Солодкий і здоровий сон - це класно!
             </p>
             <p>
@@ -86,33 +91,27 @@
     </div>
 </section>
 
-<section id="services" class="services">
+<section class="products">
     <div class="container">
-        <div class="services__top">
-            <div class="services__title-box">
-                <div class="services__title">
-                    Наші послуги
+        <div class="about__top">
+            <div class="about__title-box">
+                <div class="about__title">
+                    Доступні товари
                 </div>
                 <div class="services__text">
-                    Індивідуальний підхід до кожного клієнта. Доступна ціна.
+                    Ви можете ознайомитись з доступними розмірами подушок,
+                    а також дізнатися актуальні ціни.
                 </div>
             </div>
-            <div class="services__btn">
-                <a href="#">
-                    Показати усі послуги
-                </a>
-            </div>
         </div>
-        <div class="services__items" th:each="el : ${pillows}">
-            <div class="services__item">
+        <div class="products__items">
+            <div class="products__item" th:each="el : ${pillows}">
                 <img src="img/pillow.png" alt="">
-                <div class="services__item-title"
-                     th:text="${el.getHeight()} + 'x' + ${el.getWidth()} + ' - ' + ${el.getPrice()} + ' грн.'"></div>
-                <div class="services__item-btn">
-                    <a class="services__item-link" href="#">Детальніше</a>
-                    <a class="default-btn" href="#">
-                        Замовити
-                    </a>
+                <div class="products__item-title"
+                     th:text="${el.getHeight()} + 'x' + ${el.getWidth()}">
+                </div>
+                <div class="products__item-title"
+                     th:text="${el.getPrice()} + ' грн.'">
                 </div>
             </div>
         </div>
@@ -122,7 +121,6 @@
 <footer>
     <div th:insert="blocks/footer :: footer"></div>
 </footer>
-</body>
 
 <div th:insert="blocks/forms :: login"></div>
 <div th:insert="blocks/forms :: registration"></div>
@@ -131,5 +129,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="js/jquery.fancybox.min.js"></script>
 <script src="js/main.js"></script>
+
+</body>
 
 </html>

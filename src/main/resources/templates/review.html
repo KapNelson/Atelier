@@ -5,28 +5,50 @@
     <title>Відгуки</title>
     <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,700|Roboto:400,500&amp;subset=cyrillic"
           rel="stylesheet">
+    <link rel="stylesheet" href="css/jquery.fancybox.min.css">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/fonts.css">
-    <link rel="stylesheet" href="css/jquery.formstyler.css">
     <link rel="stylesheet" href="css/review_style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 <header class="header">
     <div th:insert="blocks/header :: header"></div>
 </header>
 
-<section id="review" class="review">
+<section class="top">
+    <div class="container">
+        <div class="top__content">
+            <div class="top__title-box">
+                <div class="top__title">
+                    Відгуки про нас
+                </div>
+                <div class="top__text">
+                    Наше Ательє має безліч задоволених клієнтів, з відгуками яких ви можете ознайомитись.
+                    <br>Якщо Ви також хочете залишити відгути, то можете це зробити заповнивши форму на головній сторінці.
+                </div>
+            </div>
+            <div class="top__btn">
+                <a href="/">
+                    На головну
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="review">
     <div class="container">
         <div class="review__inner">
-            <div class="services__items">
-                <div class="services__item" th:each="el : ${page}">
-                    <div class="services__title">
-                        <div class="services__image">
+            <div class="review__items">
+                <div class="review__item" th:each="el : ${page}">
+                    <div class="review__title">
+                        <div class="review__image">
                             <img src="img/review.png" alt="">
                         </div>
-                        <div class="services__item-title" th:text="${el.getName()}"></div>
+                        <div class="review__item-title" th:text="${el.getName()}"></div>
                     </div>
-                    <div class="services__item-text" th:text="${el.getText()}"></div>
+                    <div class="review__item-text" th:text="${el.getText()}"></div>
                 </div>
             </div>
             <nav class="pagination">
@@ -39,8 +61,20 @@
         </div>
     </div>
 </section>
+
 <footer>
     <div th:insert="blocks/footer :: footer"></div>
 </footer>
 </body>
+
+<div th:insert="blocks/forms :: login"></div>
+<div th:insert="blocks/forms :: registration"></div>
+<div th:insert="blocks/forms :: logout"></div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="js/jquery.fancybox.min.js"></script>
+<script src="js/main.js"></script>
+
+</body>
+
 </html>

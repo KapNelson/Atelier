@@ -1,102 +1,51 @@
-* {
-    box-sizing: border-box;
+.top {
+    padding: 50px 0px 0px;
 }
 
-a {
-    text-decoration: none;
-    display: inline-block;
-    cursor: pointer;
-}
-
-ul,
-li {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-.container {
-    max-width: 1170px;
-    margin: 0 auto;
-    padding: 0 15px;
-}
-
-body {
-    font-family: 'PT Serif', serif;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 18px;
-    color: #5e5e5e;
-}
-
-header {
-    font-family: 'Roboto', sans-serif;
-}
-
-.header__top {
-    background-color: #1fa0b5;
-}
-
-.header__btn {
-    float: right;
-    line-height: 36px;
-    color: #fff;
-    background-color: #242765;
-    padding: 5px 20px 4px 20px;
-    font-size: 16px;
-    display: block;
-    position: relative;
-}
-
-.header__contacts:after {
-    content: "";
-    clear: both;
-    display: block;
-}
-
-.header__phone,
-.header__email {
-    color: #000;
-    letter-spacing: 0.25px;
-    line-height: 45px;
-    position: relative;
-}
-
-.header__phone {
-    padding-left: 20px;
-    padding-right: 30px;
-}
-
-.header__phone:before {
-    content: "\f095";
-    position: absolute;
-    left: 0;
-    color: #000;
-    font-family: "icomoon";
-}
-
-.header__email {
-    padding-left: 24px;
-}
-
-.header__email:before {
-    content: "\f003";
-    position: absolute;
-    left: 0;
-    color: #000;
-    font-family: "icomoon";
-}
-
-.header__content {
-    padding: 20px 0px 20px;
-}
-
-.header__content-inner {
+.top__content {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 60px;
 }
 
-.services__item {
+.top__title-box {
+    max-width: 520px;
+    padding-left: 140px;
+    position: relative;
+}
+
+.top__title-box:before {
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 2px;
+    background-color: #1fa0b5;
+    left: 0;
+    top: 11px;
+}
+
+.top__title {
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 24px;
+    color: #212020;
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: 10px;
+}
+
+.top__text {
+    letter-spacing: 0.1px;
+}
+
+.top__btn a {
+    color: #373636;
+    line-height: 24px;
+    letter-spacing: 0.25px;
+    padding: 5px 38px;
+    border: 3px solid #1fa0b5;
+}
+
+.news__item {
     background-color: #f9f9f9;
     box-shadow: 0px 7px 24.3px 2.7px rgba(91, 89, 89, 0.14);
     margin-top: 15px;
@@ -107,7 +56,7 @@ header {
     padding: 0px 10px;
 }
 
-.services__item-title {
+.news__item-title {
     color: #212020;
     font-size: 18px;
     line-height: 24px;
@@ -116,7 +65,7 @@ header {
     padding: 24px 0;
 }
 
-.services__item-text {
+.news__item-text {
     letter-spacing: 0.1px;
     padding: 0px 30px 30px;
 }
@@ -151,62 +100,6 @@ header {
     padding-left: 5px;
 }
 
-.top {
-    padding: 50px 0px 0px;
-}
-
-.services__top,
-.news__top {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 60px;
-}
-
-.services__title-box,
-.form__title-box,
-.news__title-box {
-    max-width: 520px;
-    padding-left: 140px;
-    position: relative;
-}
-
-.services__title-box:before,
-.form__title-box:before,
-.news__title-box:before {
-    content: "";
-    position: absolute;
-    width: 100px;
-    height: 2px;
-    background-color: #1fa0b5;
-    left: 0;
-    top: 11px;
-}
-
-.services__title {
-    font-size: 24px;
-    font-weight: 500;
-    line-height: 24px;
-    color: #212020;
-    font-family: 'Roboto', sans-serif;
-    margin-bottom: 10px;
-}
-
-.services__text,
-.form__text,
-.news__text {
-    letter-spacing: 0.1px;
-}
-
-.services__btn a,
-.news__btn a,
-.review__btn a {
-    color: #373636;
-    line-height: 24px;
-    letter-spacing: 0.25px;
-    padding: 5px 38px;
-    border: 3px solid #1fa0b5;
-}
-
 .news__date {
     background-color: #1fa0b5;
     height: 55px;
@@ -218,14 +111,4 @@ header {
     top: 0px;
     left: 10px;
     margin-right: 30px;
-}
-
-.footer__copy {
-    background-color: #303030;
-    text-align: center;
-    font-size: 12px;
-    line-height: 24px;
-    padding: 8px 0;
-    font-weight: 400;
-    font-family: 'Roboto', sans-serif;
 }
