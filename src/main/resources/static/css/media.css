@@ -107,10 +107,7 @@
 
     .form__box-right {
         max-width: 100%;
-    }
-
-    .form__box-inner .jq-selectbox__select {
-        margin-bottom: 10px;
+        margin-top: 20px;
     }
 
     .form {
@@ -124,6 +121,10 @@
     .advantages-item {
         max-width: 100%;
         margin-bottom: 30px;
+    }
+
+    .form__inner {
+        padding-bottom: 0;
     }
 }
 
