@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Головна сторінка</title>
+    <link rel="icon" href="img/icon.png" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,700|Roboto:400,500&amp;subset=cyrillic"
           rel="stylesheet">
     <link rel="stylesheet" href="css/normalize.css">
@@ -83,9 +84,8 @@
                         ПОСТІЛЬНА БІЛИЗНА
                     </div>
                     <div class="slider__text">
-                        Купити за ціною виробника: простирадла, наволочки, підодіяльники, напірники.
-                        Подушки з холофайберу: для сну, дитячі, для вагітних та декоративні на будь-який смак. Акуратний
-                        пошив. Великий вибір.
+                        Купити за ціною виробника.
+                        Акуратний пошив. Великий вибір.
                         У Вас є унікальна можливість зібрати свій індивідуальний комплект постільної білизни потрібних
                         розмірів.
                     </div>
@@ -97,14 +97,12 @@
             <div class="slider__item">
                 <div class="slider__item-content">
                     <div class="slider__title">
-                        ТОВАРИ ДЛЯ РУКОДІЛЛЯ ТА ШИТТЯ
+                        ТОВАРИ ДЛЯ РУКОДІЛЛЯ
                     </div>
                     <div class="slider__text">
-                        Загубили гудзик? Не працює змійка? Потрібна нитка гавайської хвилі або стрічка бузкового
-                        кольору?
+                        Загубили гудзик? Не працює змійка?
                         Принесли джинси до іншого Ательє, а там потрібна своя змійка? Скоріше до нас, ми маємо великий
                         вибір фурнітури на любий смак і гаманець.
-                        Для клієнтів нашого Ательє постійна знижка на фурнітуру.
                     </div>
                     <a href="/accessories" class="slider__btn default-btn">
                         Детальніше
@@ -237,9 +235,6 @@
                     Ваш комфорт - це наша робота!
                 </p>
             </div>
-            <a href="#" class="about__btn default-btn">
-                Дізнатися більше
-            </a>
         </div>
     </div>
 </section>
@@ -267,7 +262,9 @@
             </div>
             <div class="news__blog" th:each="el : ${news}">
                 <div class="news__images">
-                    <img src="img/news.jpg" alt="">
+                    <a href="/news">
+                        <img src="img/news.jpg" alt="">
+                    </a>
                     <div class="news__date" th:text="${el.getPublicationDateInString()}"></div>
                 </div>
                 <div class="news__blog-title" th:text="${el.getTitle()}"></div>
@@ -329,7 +326,8 @@
                         Залишити відгук
                     </div>
                     <div class="form__text">
-                        Ми прислуховуємося до кожного нашого клієнта, тому будемо раді отримати Ваш відгук про нашу роботу.
+                        Ми прислуховуємося до кожного нашого клієнта, тому будемо раді отримати Ваш відгук про нашу
+                        роботу.
                     </div>
                 </div>
                 <div class="form__box">

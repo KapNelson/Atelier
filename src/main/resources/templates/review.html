@@ -2,7 +2,10 @@
 <html lang="ua" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Відгуки</title>
+    <link rel="icon" href="img/icon.png" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,700|Roboto:400,500&amp;subset=cyrillic"
           rel="stylesheet">
     <link rel="stylesheet" href="css/jquery.fancybox.min.css">
@@ -10,6 +13,7 @@
     <link rel="stylesheet" href="css/fonts.css">
     <link rel="stylesheet" href="css/review_style.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/media.css">
 </head>
 <body>
 <header class="header">
@@ -39,7 +43,7 @@
 
 <section class="review">
     <div class="container">
-        <div class="review__inner">
+        <div class="review__content">
             <div class="review__items">
                 <div class="review__item" th:each="el : ${page}">
                     <div class="review__title">

@@ -11,8 +11,8 @@ $('#registration').submit(function (e) {
 
     if (!login.value || !password.value || !repassword.value) {
         message.innerHTML = "Всі поля повинні бути обов'язково заповнені!";
-    } else if (login.value.length < 4 || login.value.length > 32) {
-        message.innerHTML = "Логін повинен складатись від 4 до 32 символів!";
+    } else if (login.value.length < 4 || login.value.length > 16) {
+        message.innerHTML = "Логін повинен складатись від 4 до 16 символів!";
     } else if (!regexpLogin.test(login.value)) {
         message.innerHTML = "Логін повинен містити лише цифри та латиницю!";
     } else if (password.value.length < 8 || password.value.length > 32) {
