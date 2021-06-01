@@ -71,7 +71,7 @@ public class MainController {
     }
 
     @PostMapping("/addreview")
-    public String authorizationUser(@RequestParam String name, @RequestParam String phone, String text, Model model) {
+    public String addReview(@RequestParam String name, @RequestParam String phone, String text, Model model) {
         Review review = new Review(name, phone, text);
         reviewRepository.save(review);
         return "redirect:";

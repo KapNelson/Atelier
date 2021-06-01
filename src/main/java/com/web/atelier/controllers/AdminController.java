@@ -40,6 +40,14 @@ public class AdminController {
         return "admin";
     }
 
+    @PostMapping("/confirm_review")
+    public String confirmReview(@RequestParam Long id, Model model) {
+        Optional<Review> review = reviewRepository.findById(id);
+        review.get().setVerified(!review.get().getVerified());
+        reviewRepository.save(review.get());
+        return "redirect:admin/manage_review";
+    }
+
     @GetMapping("/admin/manage_pillow")
     public String goToManagePillowPage(Model model) {
         Iterable<Pillow> pillows = pillowRepository.findAll();
@@ -106,14 +114,6 @@ public class AdminController {
         user.get().setEnabled(!user.get().getEnabled());
         userRepository.save(user.get());
         return "redirect:admin/manage_user";
-    }
-
-    @PostMapping("/confirm_review")
-    public String confirmReview(@RequestParam Long id, Model model) {
-        Optional<Review> review = reviewRepository.findById(id);
-        review.get().setVerified(!review.get().getVerified());
-        reviewRepository.save(review.get());
-        return "redirect:admin/manage_review";
     }
 
     @PostMapping("/add_news")
