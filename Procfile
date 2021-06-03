@@ -1,0 +1,1 @@
+web: java $JAVA_TOOL_OPTIONS .-Dserverport=$PORT -jar target/Atelier-2021.8.2-SNAPSHOT.jar
