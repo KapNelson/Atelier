@@ -12,6 +12,7 @@
     <groupId>com.web</groupId>
     <artifactId>Atelier</artifactId>
     <version>2021.8.2-SNAPSHOT</version>
+
     <name>Atelier</name>
     <description>My project for Spring Boot</description>
 
