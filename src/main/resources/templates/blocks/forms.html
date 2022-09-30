@@ -17,6 +17,15 @@
   <div id="message_reg" class="message"></div>
 </form>
 
-<form id="logout" th:fragment="logout">
+<form id="profile" th:fragment="profile">
   <a href="/logout">Вийти з аккаунту</a>
+</form>
+
+<form id="profile_admin" th:fragment="profile_admin">
+  <div class="profile_container">
+  <a href="/admin">Панель адміністратора</a>
+  </div>
+  <div class="profile_container">
+  <a href="/logout">Вийти з аккаунту</a>
+  </div>
 </form>

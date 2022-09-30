@@ -46,6 +46,7 @@ header {
     font-size: 16px;
     display: block;
     position: relative;
+    border-radius: 10px;
 }
 
 .header__contacts:after {
@@ -104,7 +105,8 @@ header {
     display: none;
 }
 
-#logout {
+#profile,
+#profile_admin {
     display: none;
 }
 
@@ -275,19 +277,22 @@ header {
     border: none;
 }
 
-#logout {
+#profile,
+#profile_admin {
     width: 300px;
 }
 
-#logout a {
-    line-height: 36px;
+#profile a,
+#profile_admin a {
+    line-height: 24px;
     color: #fff;
     background-color: #242765;
     padding: 5px 20px 4px 20px;
-    font-size: 16px;
+    font-size: 14px;
     display: block;
     position: relative;
     text-align: center;
+    border-radius: 25px;
 }
 
 .message {
@@ -300,4 +305,8 @@ header {
     font-weight: 400;
     font-size: small;
     color: #ff0000;
+}
+
+.profile_container {
+    margin: 15px;
 }

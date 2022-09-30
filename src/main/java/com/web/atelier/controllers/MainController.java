@@ -49,7 +49,11 @@ public class MainController {
         if(auth.isAuthenticated()) {
             if(!auth.getName().equals("anonymousUser")) {
                 username = "Привіт, " + auth.getName();
-                logstatus = "#logout";
+                if(auth.getAuthorities().stream().anyMatch(role -> role.getAuthority().equals("ROLE_ADMIN"))) {
+                    logstatus = "#profile_admin";
+                } else {
+                    logstatus = "#profile";
+                }
             }
         }
 
