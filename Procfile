@@ -1,1 +1,1 @@
-web: java $JAVA_TOOL_OPTIONS -Dserver.port=$PORT -jar target/Atelier-2023.1.0-SNAPSHOT.jar
+web: java $JAVA_TOOL_OPTIONS -Dserver.port=$PORT -jar target/Atelier-2023.1.1-SNAPSHOT.jar

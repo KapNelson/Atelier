@@ -126,20 +126,9 @@ public class AdminController {
     }
 
     @PostMapping("/add_news")
-    public String addNewNews(@RequestParam String title, @RequestParam String text, @RequestParam MultipartFile file, Model model) {
-        String fileType = Objects.requireNonNull(StringUtils.split(file.getContentType(), "/"))[1];
-
-        News news = new News(title, text, LocalDate.now(), fileType);
-        Long newsId = newsRepository.save(news).getId();
-
-        File imageFile = new File(String.format("src/main/resources/static/img/news/%s.%s", newsId, fileType));
-        try {
-            file.transferTo(imageFile);
-            imageFile.createNewFile();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-
+    public String addNewNews(@RequestParam String title, @RequestParam String text, Model model) {
+        News news = new News(title, text, LocalDate.now());
+        newsRepository.save(news);
         return "redirect:admin/manage_news";
     }
 
@@ -147,13 +136,5 @@ public class AdminController {
     public String deleteNews(@RequestParam Long id, Model model) {
         newsRepository.deleteById(id);
         return "redirect:admin/manage_news";
-    }
-
-    @Bean(name = "multipartResolver")
-    public CommonsMultipartResolver multipartResolver()
-    {
-        CommonsMultipartResolver multipartResolver = new CommonsMultipartResolver();
-        multipartResolver.setMaxUploadSize(20848820);
-        return multipartResolver;
     }
 }

@@ -263,7 +263,7 @@
             <div class="news__blog" th:each="el : ${news}">
                 <div class="news__images">
                     <a href="/news">
-                        <img th:src="${el.getImagePath(el.getId(), el.getImageType())}" alt="" class="news__image">
+                        <img src="/img/news.jpg" alt=""/>
                     </a>
                     <div class="news__date" th:text="${el.getPublicationDateInString()}"></div>
                 </div>

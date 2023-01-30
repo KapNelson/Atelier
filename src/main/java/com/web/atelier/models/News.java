@@ -24,13 +24,11 @@ public class News {
     private String title;
     private String text;
     private LocalDate publicationDate;
-    private String imageType;
 
-    public News(String title, String text, LocalDate publicationDate, String imageType) {
+    public News(String title, String text, LocalDate publicationDate) {
         this.title = title;
         this.text = text;
         this.publicationDate = publicationDate;
-        this.imageType = imageType;
     }
 
     public String getShortText() {
@@ -49,16 +47,5 @@ public class News {
 
     public String getTextWithIndentation() {
         return text.replace("\n", "<br>");
-    }
-
-    public String getImagePath(String id, String imageType) {
-        String filePath = String.format("src/main/resources/static/img/news/%s.%s", id, imageType);
-        File file = new File(filePath);
-
-        if(file.exists()) {
-            return String.format("img/news/%s.%s", id, imageType);
-        } else {
-            return "img/news/news.jpg";
-        }
     }
 }

@@ -437,12 +437,6 @@
     position: relative;
 }
 
-.news__image {
-    width: 262px;
-    height: 190px;
-    object-fit: cover;
-}
-
 .news__date {
     position: absolute;
     background-color: #1fa0b5;
