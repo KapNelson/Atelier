@@ -9,18 +9,27 @@ import com.web.atelier.repo.PillowRepository;
 import com.web.atelier.repo.ReviewRepository;
 import com.web.atelier.repo.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 
+import javax.imageio.ImageIO;
+import java.awt.image.BufferedImage;
+import java.io.*;
+import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
 import java.time.LocalDate;
 
@@ -117,9 +126,20 @@ public class AdminController {
     }
 
     @PostMapping("/add_news")
-    public String addNewNews(@RequestParam String title, @RequestParam String text, Model model) {
-        News news = new News(title, text, LocalDate.now());
-        newsRepository.save(news);
+    public String addNewNews(@RequestParam String title, @RequestParam String text, @RequestParam MultipartFile file, Model model) {
+        String fileType = Objects.requireNonNull(StringUtils.split(file.getContentType(), "/"))[1];
+
+        News news = new News(title, text, LocalDate.now(), fileType);
+        Long newsId = newsRepository.save(news).getId();
+
+        File imageFile = new File(String.format("src/main/resources/static/img/news/%s.%s", newsId, fileType));
+        try {
+            file.transferTo(imageFile);
+            imageFile.createNewFile();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
         return "redirect:admin/manage_news";
     }
 
@@ -127,5 +147,13 @@ public class AdminController {
     public String deleteNews(@RequestParam Long id, Model model) {
         newsRepository.deleteById(id);
         return "redirect:admin/manage_news";
+    }
+
+    @Bean(name = "multipartResolver")
+    public CommonsMultipartResolver multipartResolver()
+    {
+        CommonsMultipartResolver multipartResolver = new CommonsMultipartResolver();
+        multipartResolver.setMaxUploadSize(20848820);
+        return multipartResolver;
     }
 }
