@@ -8,41 +8,34 @@ import com.web.atelier.repo.NewsRepository;
 import com.web.atelier.repo.PillowRepository;
 import com.web.atelier.repo.ReviewRepository;
 import com.web.atelier.repo.UserRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.multipart.MultipartFile;
-import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 
-import javax.imageio.ImageIO;
-import java.awt.image.BufferedImage;
-import java.io.*;
-import java.nio.file.Files;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 import java.util.Optional;
-import java.time.LocalDate;
 
 @Controller
 public class AdminController {
-    @Autowired
-    private UserRepository userRepository;
-    @Autowired
-    private PillowRepository pillowRepository;
-    @Autowired
-    private ReviewRepository reviewRepository;
-    @Autowired
-    private NewsRepository newsRepository;
+    private final UserRepository userRepository;
+    private final PillowRepository pillowRepository;
+    private final ReviewRepository reviewRepository;
+    private final NewsRepository newsRepository;
+
+    public AdminController(UserRepository userRepository, PillowRepository pillowRepository, ReviewRepository reviewRepository, NewsRepository newsRepository) {
+        this.userRepository = userRepository;
+        this.pillowRepository = pillowRepository;
+        this.reviewRepository = reviewRepository;
+        this.newsRepository = newsRepository;
+    }
 
     @GetMapping("/admin")
     public String goToAdminPage(Model model) {

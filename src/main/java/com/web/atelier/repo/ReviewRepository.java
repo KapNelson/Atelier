@@ -11,6 +11,8 @@ import java.util.List;
 @Repository
 public interface ReviewRepository extends CrudRepository<Review, Long> {
     List<Review> findTop3ByVerifiedOrderByIdDesc(boolean verified);
+
     Page<Review> findByVerifiedOrderByIdDesc(Pageable pageable, boolean verified);
+
     Page<Review> findAllByOrderByIdDesc(Pageable pageable);
 }

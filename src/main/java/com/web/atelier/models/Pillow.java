@@ -1,11 +1,13 @@
 package com.web.atelier.models;
 
-import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 @Entity
 @Getter
@@ -13,12 +15,11 @@ import javax.persistence.*;
 @NoArgsConstructor
 public class Pillow {
     @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
     private Integer width;
     private Integer height;
     private Float price;
-
 
     public Pillow(int width, int height, float price) {
         this.width = width;

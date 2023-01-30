@@ -15,7 +15,7 @@ import javax.persistence.Id;
 @NoArgsConstructor
 public class Review {
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String name;
     private String phone;
@@ -30,14 +30,14 @@ public class Review {
     }
 
     public String isVerified() {
-        if(verified)
+        if (verified)
             return "Підтверджено";
         else
             return "Не підтверджено";
     }
 
     public String confirmReview() {
-        if(verified)
+        if (verified)
             return "Заблокувати";
         else
             return "Підтвердити";

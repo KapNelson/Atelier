@@ -4,7 +4,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 
 @Entity
 @Getter
@@ -25,14 +26,14 @@ public class User {
     }
 
     public String isEnabled() {
-        if(enabled)
+        if (enabled)
             return "Активний";
         else
             return "Не активний";
     }
 
     public String banUser() {
-        if(enabled)
+        if (enabled)
             return "Заблокувати";
         else
             return "Розблокувати";

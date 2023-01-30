@@ -8,7 +8,6 @@ import com.web.atelier.repo.NewsRepository;
 import com.web.atelier.repo.PillowRepository;
 import com.web.atelier.repo.ReviewRepository;
 import com.web.atelier.repo.UserRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
@@ -31,25 +30,27 @@ import java.util.Optional;
 @Controller
 public class MainController {
     public static final BCryptPasswordEncoder PASSWORD_ENCODER = new BCryptPasswordEncoder(4);
+    private final UserRepository userRepository;
+    private final PillowRepository pillowRepository;
+    private final ReviewRepository reviewRepository;
+    private final NewsRepository newsRepository;
 
-    @Autowired
-    private UserRepository userRepository;
-    @Autowired
-    private PillowRepository pillowRepository;
-    @Autowired
-    private ReviewRepository reviewRepository;
-    @Autowired
-    private NewsRepository newsRepository;
+    public MainController(UserRepository userRepository, PillowRepository pillowRepository, ReviewRepository reviewRepository, NewsRepository newsRepository) {
+        this.userRepository = userRepository;
+        this.pillowRepository = pillowRepository;
+        this.reviewRepository = reviewRepository;
+        this.newsRepository = newsRepository;
+    }
 
     private void setUsernameAndLogstatus(Model model) {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-        String username = new String("Вхід");
-        String logstatus = new String("#login");
+        String username = "Вхід";
+        String logstatus = "#login";
 
-        if(auth.isAuthenticated()) {
-            if(!auth.getName().equals("anonymousUser")) {
+        if (auth.isAuthenticated()) {
+            if (!auth.getName().equals("anonymousUser")) {
                 username = "Привіт, " + auth.getName();
-                if(auth.getAuthorities().stream().anyMatch(role -> role.getAuthority().equals("ROLE_ADMIN"))) {
+                if (auth.getAuthorities().stream().anyMatch(role -> role.getAuthority().equals("ROLE_ADMIN"))) {
                     logstatus = "#profile_admin";
                 } else {
                     logstatus = "#profile";

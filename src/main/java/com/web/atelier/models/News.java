@@ -1,6 +1,5 @@
 package com.web.atelier.models;
 
-import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -9,7 +8,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import java.io.File;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
@@ -19,7 +17,7 @@ import java.time.format.DateTimeFormatter;
 @NoArgsConstructor
 public class News {
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String title;
     private String text;
@@ -32,7 +30,7 @@ public class News {
     }
 
     public String getShortText() {
-        if(text.length() <= 100) {
+        if (text.length() <= 100) {
             return text;
         } else {
             return text.substring(0, 100) + "...";
@@ -41,8 +39,7 @@ public class News {
 
     public String getPublicationDateInString() {
         DateTimeFormatter formatters = DateTimeFormatter.ofPattern("dd.MM.yyyy");
-        String date = publicationDate.format(formatters);
-        return date;
+        return publicationDate.format(formatters);
     }
 
     public String getTextWithIndentation() {
